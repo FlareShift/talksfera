@@ -1,0 +1,66 @@
+/* Общий стиль контейнера */
+.faq-container {
+  width: 80%;
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #f9f4ed; /* Бежевый фон */
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq-container h2 {
+  text-align: left;
+  color: #2f2f2f;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Список FAQ */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: #2f2f2f;
+}
+
+.faq-question span:last-child {
+  font-size: 14px;
+  color: #6d6d6d;
+}
+
+.faq-answer {
+  padding: 10px 0;
+  font-size: 16px;
+  color: #4a4a4a;
+}
+
+/* Нижняя ссылка */
+.faq-footer {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.faq-footer a {
+  color: #006d77;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.faq-footer a:hover {
+  text-decoration: underline;
+}
