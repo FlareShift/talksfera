@@ -1,0 +1,108 @@
+.how-it-works-section {
+  padding: 60px;
+  background: linear-gradient(135deg, #f8f4f0, #e3e0d5); /* Градиентный фон */
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1); /* Мягкая тень */
+}
+
+.section-title {
+  font-size: 2.5rem; /* Увеличен размер заголовка */
+  font-weight: 700;
+  text-align: center;
+  color: #2f4f4f; /* Возвращен серый цвет */
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Уменьшен отступ между шагами */
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* Уменьшен отступ между картинкой и текстом */
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 30px;
+  opacity: 0;
+  transform: translateX(-30px); /* Начальная позиция для анимации */
+  animation: slideIn 1s ease-in-out forwards;
+}
+
+.step:last-child {
+  border-bottom: none;
+}
+
+.step-image img {
+  width: 160px; /* Увеличен размер картинки */
+  height: 160px;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-size: 1.5rem; /* Уменьшен размер заголовка для шага */
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #2f4f4f; /* Возвращен серый цвет для заголовков */
+}
+
+.step-description {
+  font-size: 1.1rem; /* Уменьшен размер текста описания */
+  color: #4a4a4a; /* Темно-серый цвет для текста */
+  line-height: 1.6;
+  text-align: justify;
+  margin-top: 10px;
+}
+
+/* Анимация появления с эффектом сдвига */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px); /* Начальный сдвиг слева */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Чередование направления: */
+.step:nth-child(odd) {
+  flex-direction: row-reverse; /* Для нечётных шагов картинка справа */
+  animation: slideInRight 1s ease-in-out forwards;
+}
+
+.step:nth-child(even) {
+  flex-direction: row; /* Для чётных шагов картинка слева */
+  animation: slideInLeft 1s ease-in-out forwards;
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px); /* Начальный сдвиг справа для чётных */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px); /* Начальный сдвиг слева для нечётных */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
