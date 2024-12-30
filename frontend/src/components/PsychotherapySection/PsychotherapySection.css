@@ -1,41 +1,69 @@
-.psychotherapy-section {
-  padding: 40px;
-  background-color: #f8f4f0; /* Цвет фона секции */
-  text-align: center;
-}
-
-.section-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #2f4f4f;
-  margin-bottom: 40px;
-}
-
-.cards-container {
+.card-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .card {
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  padding: 20px;
+  position: relative;
+  width: 250px; /* Устанавливаем одинаковую ширину для всех карточек */
+  height: 340px; /* Одинаковая высота для карточек */
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   text-align: center;
-  width: 250px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1.5rem; /* Добавляем отступ снизу для всех карточек */
 }
 
-.card-image {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 20px;
+.card img {
+  width: 100%; /* Карточки будут одинакового размера */
+  height: 100%; /* Все изображения заполняют карточки */
+  object-fit: cover; /* Обрезаем изображения по размеру карточки */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card-image.default {
+  opacity: 1;
+}
+
+.card-image.hover {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card:hover .card-image.default {
+  opacity: 0;
+}
+
+.card:hover .card-image.hover {
+  opacity: 1;
 }
 
 .card-title {
-  font-size: 1rem;
-  color: #4a4a4a;
-  line-height: 1.5;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Убираем увеличение первого изображения */
+.card:nth-child(1) img {
+  width: 100%; /* Снимаем увеличение, чтобы все картинки были одинаковыми */
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+  }
 }

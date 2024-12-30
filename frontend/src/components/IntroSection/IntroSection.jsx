@@ -1,6 +1,8 @@
 import React from 'react';
 import './IntroSection.css';
 
+import introSectionImage from "../../assets/images/IntroSection/IntroSection.png"; // Импорт изображения
+
 const IntroSection = () => {
   return (
     <div className="intro-section">
@@ -16,9 +18,8 @@ const IntroSection = () => {
         </p>
       </div>
       <div className="intro-image">
-        {/* Добавьте путь к вашему изображению или используйте временную заглушку */}
         <img
-          src="https://via.placeholder.com/400x300?text=Illustration"
+          src={introSectionImage} // Используем правильный импорт
           alt="Therapy illustration"
         />
       </div>

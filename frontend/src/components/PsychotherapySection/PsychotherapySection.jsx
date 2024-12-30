@@ -1,21 +1,30 @@
 import React from 'react';
 import './PsychotherapySection.css';
 
+import FirstImg from "../../assets/images/PsychotherapySection/First.png";
+import SecondImg from "../../assets/images/PsychotherapySection/Second.png";
+import ThirdImg from "../../assets/images/PsychotherapySection/Third.png";
+import FourthImg from "../../assets/images/PsychotherapySection/Fourth.png";
+
 const cards = [
   {
-    img: 'https://via.placeholder.com/150x150?text=Illustration+1',
+    defaultImg: FirstImg,
+    hoverImg: "https://via.placeholder.com/250x170/ffb3b3/333333?text=Hover+Image+1", // Временно заменено на цвет
     title: "Navigate life's challenges with resilience and clarity.",
   },
   {
-    img: 'https://via.placeholder.com/150x150?text=Illustration+2',
+    defaultImg: SecondImg,
+    hoverImg: "https://via.placeholder.com/250x170/99c2ff/333333?text=Hover+Image+2", // Временно заменено на цвет
     title: 'Regain control over stress and anxiety to find your inner calm.',
   },
   {
-    img: 'https://via.placeholder.com/150x150?text=Illustration+3',
+    defaultImg: ThirdImg,
+    hoverImg: "https://via.placeholder.com/250x170/ffcccc/333333?text=Hover+Image+3", // Временно заменено на цвет
     title: 'Build meaningful relationships and strengthen emotional connections.',
   },
   {
-    img: 'https://via.placeholder.com/150x150?text=Illustration+4',
+    defaultImg: FourthImg,
+    hoverImg: "https://via.placeholder.com/250x170/ffffb3/333333?text=Hover+Image+4", // Временно заменено на цвет
     title: 'Transform obstacles into opportunities for personal growth.',
   },
 ];
@@ -26,10 +35,21 @@ const PsychotherapySection = () => {
       <h2 className="section-title">
         Psychotherapy helps to make life more coherent and harmonious
       </h2>
-      <div className="cards-container">
+      <div className="card-container">
         {cards.map((card, index) => (
           <div key={index} className="card">
-            <img src={card.img} alt={`Illustration ${index + 1}`} className="card-image" />
+            <div className="image-container">
+              <img
+                src={card.defaultImg}
+                alt={`Illustration ${index + 1}`}
+                className="card-image default"
+              />
+              <img
+                src={card.hoverImg}
+                alt={`Illustration ${index + 1} hover`}
+                className="card-image hover"
+              />
+            </div>
             <p className="card-title">{card.title}</p>
           </div>
         ))}

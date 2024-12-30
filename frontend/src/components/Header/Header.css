@@ -3,9 +3,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 3rem;
-  background-color: #1f3b2f;
-  color: white;
+  background-color: white; /* Белый фон */
+  color: #2f4f4f; /* Темно-серый цвет для текста */
   font-family: 'Arial', sans-serif;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Легкая тень для выделения */
 }
 
 .header-logo {
@@ -22,6 +23,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
+  color: #2f4f4f; /* Цвет текста для заголовка */
 }
 
 .header-nav ul {
@@ -34,14 +36,14 @@
 
 .header-nav ul li a {
   text-decoration: none;
-  color: white;
+  color: #2f4f4f; /* Темно-серый цвет для ссылок */
   font-weight: bold;
   font-size: 1rem;
   transition: color 0.3s;
 }
 
 .header-nav ul li a:hover {
-  color: #ff6b35;
+  color: #ff6b35; /* Цвет при наведении */
 }
 
 .header-actions {
@@ -52,8 +54,8 @@
 
 select {
   background: none;
-  color: white;
-  border: 1px solid white;
+  color: #2f4f4f; /* Темно-серый цвет текста */
+  border: 1px solid #2f4f4f; /* Темно-серый бордер */
   padding: 0.5rem;
   border-radius: 5px;
   cursor: pointer;
@@ -61,9 +63,9 @@ select {
 
 .login-btn {
   background: none;
-  border: 1px solid white;
+  border: 1px solid #2f4f4f; /* Темно-серый бордер */
   padding: 0.5rem 1rem;
-  color: white;
+  color: #2f4f4f; /* Темно-серый текст */
   border-radius: 5px;
   font-size: 0.9rem;
   cursor: pointer;
@@ -71,8 +73,8 @@ select {
 }
 
 .login-btn:hover {
-  background-color: white;
-  color: #1f3b2f;
+  background-color: #2f4f4f; /* Темно-серый фон при наведении */
+  color: white; /* Белый цвет текста при наведении */
 }
 
 .cta-btn {
@@ -89,4 +91,9 @@ select {
 
 .cta-btn:hover {
   background-color: #e65c27;
+}
+
+/* Чтобы верхняя часть header была отдельно выделена */
+.header {
+  border-bottom: 1px solid #ddd; /* Легкий бордер снизу */
 }

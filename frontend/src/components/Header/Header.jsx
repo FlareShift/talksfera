@@ -1,11 +1,14 @@
 import React from "react";
 import "./Header.css";
 
+import logoImage from "../../assets/images/header/logo.png";
+
+
 const Header = () => {
   return (
     <header className="header">
       <div className="header-logo">
-        <img src="/logo.png" alt="TalkSfera Logo" />
+        <img src={logoImage} alt="TalkSfera Logo" />
         <h1>TalkSfera</h1>
       </div>
       <nav className="header-nav">
