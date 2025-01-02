@@ -1,0 +1,6 @@
+<h1>Upload Avatar</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="avatar" />
+    <button type="submit">Завантажити</button>
+</form>

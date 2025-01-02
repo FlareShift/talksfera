@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'doc.CustomUser' #потім забрати
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Application definition
 
@@ -40,6 +44,8 @@ INSTALLED_APPS = [
     'main',
     'corsheaders',
     'rest_framework',
+
+    'doc.apps.DocConfig',
 ]
 
 MIDDLEWARE = [
