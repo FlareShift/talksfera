@@ -27,6 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'login.CustomUser' #коли додамо бд забрати
+
+AUTHENTICATION_BACKENDS = [
+    'login.authentication.EmailOrPhoneBackend',  # Наш кастомний бекенд
+    'django.contrib.auth.backends.ModelBackend', # Бекенд за замовчуванням
+]
+
 
 # Application definition
 
@@ -40,6 +47,8 @@ INSTALLED_APPS = [
     'main',
     'corsheaders',
     'rest_framework',
+
+    'login.apps.LoginConfig',
 ]
 
 MIDDLEWARE = [
