@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'registration.CustomUser' #коли додамо бд забрати
 
 # Application definition
 
@@ -40,6 +41,8 @@ INSTALLED_APPS = [
     'main',
     'corsheaders',
     'rest_framework',
+
+    'registration.apps.RegistrationConfig',
 ]
 
 MIDDLEWARE = [
