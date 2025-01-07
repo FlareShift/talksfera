@@ -1,0 +1,43 @@
+.intro-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px; /* Сохраняем старые отступы для блока */
+  background-color: #F7F0E6; /* Новый цвет фона */
+}
+
+.intro-text {
+  max-width: 45%; /* Сохраняем ширину текста как раньше */
+  margin-right: 20px; /* Меньше отступ справа */
+}
+
+.intro-title {
+  font-size: 1.8rem; /* Уменьшаем размер шрифта */
+  font-weight: bold;
+  color: #2f4f4f;
+  margin-bottom: 10px; /* Уменьшаем отступ */
+}
+
+.intro-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+}
+
+.highlight {
+  color: #00796b;
+  font-weight: bold;
+}
+
+.intro-image {
+  display: flex;
+  justify-content: center;
+}
+
+.intro-image img {
+  max-width: 100%; /* Картинка не будет выходить за пределы блока */
+  height: auto;
+  border-radius: 10px;
+  margin-left: 10px; /* Меньше отступ слева для картинки */
+  max-height: 300px; /* Ограничиваем максимальную высоту изображения */
+}
