@@ -11,7 +11,6 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-
 def index(request):
     # Проверяем, существует ли файл React сборки
     react_index_path = os.path.join(settings.BASE_DIR, 'frontend', 'build', 'index.html')
