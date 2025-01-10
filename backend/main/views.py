@@ -3,6 +3,13 @@ from django.shortcuts import render
 import os
 from django.conf import settings
 
+from rest_framework import viewsets
+from .models import User, Sex
+from .serializers import UserSerializer
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 def index(request):
     # Проверяем, существует ли файл React сборки
