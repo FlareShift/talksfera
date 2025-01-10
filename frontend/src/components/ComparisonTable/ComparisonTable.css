@@ -1,56 +1,110 @@
-.comparison-table {
-  background-color: #243e30; /* Темно-зеленый фон */
-  color: #fff;
-  padding: 40px 20px;
+/* Основная структура таблицы */
+.comparison {
+  width: 80%;
+  margin: 60px auto;
+  background-color: #325243;
+  border-radius: 10px;
+  overflow: hidden;
+  color: white;
   text-align: center;
+  font-family: Arial, sans-serif;
 }
 
-.comparison-table h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
+.comparison__title {
+  font-size: 2rem;
+  margin: 20px 0;
+  color: #ffffff;
+  font-weight: bold;
 }
 
-.comparison-table .highlight {
-  color: #66c57c; /* Зеленый цвет */
+.comparison__highlight {
+  color: #a6df9b;
 }
 
-.table-container {
-  overflow-x: auto; /* Для мобильных устройств */
+.comparison__header,
+.comparison__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0 auto;
-  font-size: 16px;
+.comparison__header {
+  background-color: #1b3024;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 10px 0;
 }
 
-th, td {
+.comparison__row:nth-child(odd) {
+  background-color: #2d4236;
+}
+
+.comparison__row:nth-child(even) {
+  background-color: #325243;
+}
+
+/* Ячейки */
+.comparison__cell {
+  flex: 1;
   padding: 15px;
+  border-right: 2px solid #4a6550;
+}
+
+/* Первая колонка - особенности */
+.comparison__feature {
+  flex: 2;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 20px;
+}
+
+/* Вторая колонка - TalkSfera */
+.comparison__brand {
   text-align: center;
-  border: 1px solid #66c57c; /* Граница зеленого цвета */
+  background-color: white; /* Белый фон */
+  color: #243e30; /* Темный текст */
 }
 
-th {
-  background-color: #2e573e; /* Темно-зеленый оттенок */
-  color: #fff;
+/* Третья колонка - In-office */
+.comparison__office {
+  text-align: center;
 }
 
-tr:nth-child(even) {
-  background-color: #315849; /* Чередование строк */
+/* Логотип в заголовке */
+.comparison__logo {
+  width: 40px;
+  margin-bottom: 5px;
 }
 
-tr:nth-child(odd) {
-  background-color: #243e30;
+/* Убираем правую границу у последней ячейки */
+.comparison__cell:last-child {
+  border-right: none;
 }
 
-td {
-  color: #fff;
-}
-
+/* Адаптивность */
 @media (max-width: 768px) {
-  th, td {
-    font-size: 14px;
+  .comparison {
+    width: 95%;
+  }
+
+  .comparison__header,
+  .comparison__row {
+    flex-direction: column;
+  }
+
+  .comparison__cell {
+    text-align: center;
     padding: 10px;
+    border-right: none;
+    border-bottom: 1px solid #4a6550;
+  }
+
+  .comparison__cell:last-child {
+    border-bottom: none;
+  }
+
+  .comparison__feature {
+    text-align: center;
+    padding-left: 0;
   }
 }

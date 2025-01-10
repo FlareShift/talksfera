@@ -1,27 +1,46 @@
-.scrolling-logos-container {
-  overflow: hidden;
-  white-space: nowrap;
+.scrolling-logos {
   width: 100%;
-  position: relative;
   background-color: #f8f8f8;
+  overflow: hidden;
+  position: relative;
 }
 
-.scrolling-logos {
+.scrolling-logos__container {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+.scrolling-logos__track {
   display: flex;
   gap: 20px;
-  animation: scroll 20s linear infinite;
+  animation: scrolling-logos__scroll 20s linear infinite;
 }
 
-.logo {
+.scrolling-logos__logo {
   height: 100px;
   flex-shrink: 0;
+  object-fit: contain;
 }
 
-@keyframes scroll {
+@keyframes scrolling-logos__scroll {
   from {
     transform: translateX(0);
   }
   to {
     transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .scrolling-logos__logo {
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scrolling-logos__logo {
+    height: 60px;
   }
 }
