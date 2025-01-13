@@ -11,10 +11,13 @@ const Header = () => {
     navigate('/register'); // Перенаправляем на страницу регистрации
   };
 
+<<<<<<< HEAD
   const goToLogin = () => {
     navigate('/login'); // Перенаправляем на страницу логина
   };
 
+=======
+>>>>>>> 74ce200 (added registration page into the site)
   return (
     <header className="header">
       <div className="header__logo">
@@ -50,8 +53,13 @@ const Header = () => {
           <option>ENG</option>
           <option>RUS</option>
         </select>
+<<<<<<< HEAD
         <button className="actions__login-button" onClick={goToLogin}>Log in</button> {/* Обработчик кнопки */}
         <button className="actions__cta-button" onClick={goToRegister}>Get started - it's free</button>
+=======
+        <button className="actions__login-button">Log in</button>
+        <button className="actions__cta-button" onClick={goToRegister}>Get started - it's free</button> {/* Добавляем обработчик для кнопки */}
+>>>>>>> 74ce200 (added registration page into the site)
       </div>
     </header>
   );

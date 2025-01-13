@@ -4,7 +4,10 @@ import axios from 'axios';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MainPage from './pages/MainPage';
 import RegisterPage from './pages/RegisterPage';
+<<<<<<< HEAD
 import LoginPage from './pages/LoginPage';
+=======
+>>>>>>> 74ce200 (added registration page into the site)
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -25,7 +28,10 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />  {/* Главная страница */}
         <Route path="/register" element={<RegisterPage />} />  {/* Страница регистрации */}
+<<<<<<< HEAD
         <Route path="/login" element={<LoginPage />} />  {/* Страница логина */}
+=======
+>>>>>>> 74ce200 (added registration page into the site)
       </Routes>
     </Router>
   );
