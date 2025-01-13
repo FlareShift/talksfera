@@ -1,0 +1,56 @@
+.comparison-table {
+  background-color: #243e30; /* Темно-зеленый фон */
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.comparison-table h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.comparison-table .highlight {
+  color: #66c57c; /* Зеленый цвет */
+}
+
+.table-container {
+  overflow-x: auto; /* Для мобильных устройств */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+th, td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #66c57c; /* Граница зеленого цвета */
+}
+
+th {
+  background-color: #2e573e; /* Темно-зеленый оттенок */
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #315849; /* Чередование строк */
+}
+
+tr:nth-child(odd) {
+  background-color: #243e30;
+}
+
+td {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  th, td {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
