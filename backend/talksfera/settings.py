@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'main',
     'corsheaders',
     'rest_framework',
-
+    'registration',
     'doc.apps.DocConfig',
 ]
 
