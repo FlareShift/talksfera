@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'registration',
-    'doc.apps.DocConfig',
+    
 ]
 
 MIDDLEWARE = [
