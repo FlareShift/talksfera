@@ -46,7 +46,7 @@ const Registration = () => {
   };
 
   return (
-    <div className={styles.registrationWrapper}>
+    <div className={`${styles.registrationWrapper} ${styles.registrationPage}`}>
       <div className={styles.registrationContainer}>
         <aside className={styles.registrationSidebar}>
           <h2>Create account</h2>

@@ -1,13 +1,26 @@
+/* Уникальный фон для только компонента ComparisonTable */
+.comparison-container {
+  background-color: #325243; /* Зеленый фон */
+  padding: 20px;
+}
+
+/* Обертка для заголовка */
+.comparison__intro {
+  text-align: center; /* Центрируем текст */
+  margin-bottom: 20px;
+}
+
 /* Основная структура таблицы */
 .comparison {
   width: 80%;
   margin: 60px auto;
-  background-color: #325243;
   border-radius: 10px;
   overflow: hidden;
   color: white;
   text-align: center;
   font-family: Arial, sans-serif;
+  display: table;
+  table-layout: fixed; /* Обеспечивает равные ширины для колонок */
 }
 
 .comparison__title {
@@ -15,6 +28,7 @@
   margin: 20px 0;
   color: #ffffff;
   font-weight: bold;
+  text-align: center; /* Центрируем текст по горизонтали */
 }
 
 .comparison__highlight {
@@ -23,9 +37,7 @@
 
 .comparison__header,
 .comparison__row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: table-row; /* Для выравнивания в одну строку */
 }
 
 .comparison__header {
@@ -45,14 +57,13 @@
 
 /* Ячейки */
 .comparison__cell {
-  flex: 1;
+  display: table-cell; /* Для выравнивания ячеек по высоте */
   padding: 15px;
   border-right: 2px solid #4a6550;
 }
 
 /* Первая колонка - особенности */
 .comparison__feature {
-  flex: 2;
   font-weight: bold;
   text-align: left;
   padding-left: 20px;
@@ -60,13 +71,20 @@
 
 /* Вторая колонка - TalkSfera */
 .comparison__brand {
-  text-align: center;
   background-color: white; /* Белый фон */
   color: #243e30; /* Темный текст */
+  display: flex;
+  justify-content: center; /* Горизонтальное выравнивание по центру */
+  align-items: center; /* Вертикальное выравнивание по центру */
+  padding: 15px 0;
+  border-right: none; /* Убираем правую границу у второй колонки */
+  text-align: center;
+  min-height: 30px; /* Убедитесь, что ячейка имеет достаточную высоту */
 }
 
 /* Третья колонка - In-office */
 .comparison__office {
+  display: table-cell;
   text-align: center;
 }
 
@@ -90,6 +108,7 @@
   .comparison__header,
   .comparison__row {
     flex-direction: column;
+    display: block; /* Для адаптивности меняем на блок */
   }
 
   .comparison__cell {

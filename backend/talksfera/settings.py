@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    'registration',
     'corsheaders',
     'rest_framework',
-    'registration',
 ]
 
 MIDDLEWARE = [
@@ -88,7 +88,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'talksfera_db', #idk
         'USER': 'root',
-        'PASSWORD': '84K731L582',
+        'PASSWORD': 'mama6101',
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -140,3 +140,7 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ORIGIN_WHITELIST = [
+     'http://localhost:3000'
+]
