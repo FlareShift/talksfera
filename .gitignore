@@ -66,3 +66,12 @@ db.sqlite3
 
 # JetBrains (PyCharm/IntelliJ)
 .idea/
+
+# Django
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+*.env
+
