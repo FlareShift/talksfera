@@ -8,4 +8,5 @@ urlpatterns = [
     path('api/', include('main.urls')),
     path('', TemplateView.as_view(template_name='index.html')),
     path('login/', include('login.urls')),
+    path('register/', TemplateView.as_view(template_name="index.html"), name='register'),
 ]

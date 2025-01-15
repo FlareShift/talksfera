@@ -3,7 +3,16 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+<<<<<<< HEAD
 from login.views import login_view
+=======
+from rest_framework import routers
+from .views import UserViewSet
+
+router = routers.DefaultRouter()
+router.register(r'users', UserViewSet, basename='user')
+
+>>>>>>> develop
 
 urlpatterns = [
     path('', views.index, name='home'),

@@ -1,82 +1,113 @@
 import React from "react";
 import "./Footer.css";
+import logoImage from "../../assets/images/footer/logo.svg";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTiktok,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+  FaEnvelope,
+} from "react-icons/fa";
+import { SiVisa, SiMastercard, SiPaypal, SiBitcoin } from "react-icons/si";
 
 const Footer = () => {
+  const pages = ["Main", "Blog", "Courses", "My Profile", "Education", "See Therapist's", "About TalkSfera"];
+  const impactItems = [
+    "Offer Therapy Services",
+    "Teach Psychology Courses",
+    "Host Mental Health Webinars",
+    "Become an Affiliate",
+    "Promote Your Practice",
+    "Publish with TalkSfera",
+    "Create a Support Hub",
+  ];
+  const financialItems = ["Therapy Payment Plans", "TalkSfera Reward Points", "Reload Your Wallet", "Currency Support"];
+  const supportItems = [
+    "Manage Your Account",
+    "Track Your Bookings",
+    "Affordable Plans",
+    "Returns & Refunds",
+    "Manage Your Learning",
+    "TalkSfera Assistant",
+    "Get Help",
+  ];
+
   return (
     <footer className="footer">
-      <div className="footer-container">
-        <div className="footer-section contact-info">
-          <h3>TalkSfera</h3>
-          <p className="tagline">"Find the support you deserve"</p>
-          <p>Hotline 24/7</p>
-          <p>+380(68)767 71 95</p>
-          <p>600 Kearny St, Boxtie, NYC</p>
-          <p>support@TalkSfera.com</p>
+      <div className="footer__container">
+        <div className="footer__section footer__contact">
+          <div className="footer__logo-container">
+            <img src={logoImage} alt="TalkSfera Logo" className="footer__logo" />
+            <span className="footer__logo-text">TalkSfera</span>
+          </div>
+          <p className="footer__tagline">"Find the support you deserve"</p>
+          <address className="footer__address">
+            <p className="footer__info">
+              <FaPhoneAlt className="footer__icon" /> +380(68)767 71 95
+            </p>
+            <p className="footer__info">
+              <FaMapMarkerAlt className="footer__icon" /> 959 Homestead St, Eastlake, NYC
+            </p>
+            <p className="footer__info">
+              <FaEnvelope className="footer__icon" /> support@TalkSfera.com
+            </p>
+          </address>
         </div>
-
-        <div className="footer-section">
-          <h4>Pages</h4>
-          <ul>
-            <li>Main</li>
-            <li>Blog</li>
-            <li>Courses</li>
-            <li>My Profile</li>
-            <li>Education</li>
-            <li>See Therapists</li>
-            <li>About TalkSfera</li>
+        <div className="footer__section">
+          <h2 className="footer__title">Pages</h2>
+          <ul className="footer__list">
+            {pages.map((page, index) => (
+              <li key={index} className="footer__item">
+                <a href={`/${page.toLowerCase().replace(/ /g, "-")}`} className="footer__link">
+                  {page}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
-
-        <div className="footer-section">
-          <h4>Make an Impact</h4>
-          <ul>
-            <li>Offer Therapy Services</li>
-            <li>Teach Psychology Courses</li>
-            <li>Host Mental Health Webinars</li>
-            <li>Become an Affiliate</li>
-            <li>Promote Your Practice</li>
-            <li>Publish with TalkSfera</li>
-            <li>Create a Support Hub</li>
-          </ul>
-        </div>
-
-        <div className="footer-section">
-          <h4>Financial Services</h4>
-          <ul>
-            <li>Therapy Payment Plans</li>
-            <li>TalkSfera Reward Points</li>
-            <li>Reload Your Wallet</li>
-            <li>Currency Support</li>
-          </ul>
-        </div>
-
-        <div className="footer-section">
-          <h4>Let Us Support You</h4>
-          <ul>
-            <li>Manage Your Account</li>
-            <li>Track Your Bookings</li>
-            <li>Affordable Plans</li>
-            <li>Returns & Refunds</li>
-            <li>Manage Your Learning</li>
-            <li>TalkSfera Assistant</li>
-            <li>Get Help</li>
-          </ul>
-        </div>
+        {[{ title: "Make an Impact", items: impactItems }, { title: "Financial Services", items: financialItems }, { title: "Let Us Support You", items: supportItems }].map(
+          (section, index) => (
+            <div key={index} className="footer__section">
+              <h2 className="footer__title">{section.title}</h2>
+              <ul className="footer__list">
+                {section.items.map((item, idx) => (
+                  <li key={idx} className="footer__item">
+                    <a href={`/${item.toLowerCase().replace(/ /g, "-")}`} className="footer__link">
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        )}
       </div>
-
-      <div className="footer-bottom">
-        <p>© 2023 TalkSfera. All Rights Reserved.</p>
-        <div className="payment-icons">
-          <span>Mastercard</span>
-          <span>Visa</span>
-          <span>PayPal</span>
-          <span>Crypto</span>
+      <div className="footer__bottom">
+        <p className="footer__copyright">© 2025 TalkSfera. All Rights Reserved.</p>
+        <div className="footer__payments">
+          <span className="footer__icon footer__icon--mastercard">
+            <SiMastercard />
+          </span>
+          <span className="footer__icon">
+            <SiVisa />
+          </span>
+          <span className="footer__icon">
+            <SiPaypal />
+          </span>
+          <span className="footer__icon footer__icon--bitcoin">
+            <SiBitcoin />
+          </span>
         </div>
-        <div className="social-icons">
-          <span>FB</span>
-          <span>Twitter</span>
-          <span>Instagram</span>
-          <span>LinkedIn</span>
+        <div className="footer__social">
+          <span className="footer__social-text">Our Contacts:</span>
+          {[<FaFacebookF />, <FaTwitter />, <FaInstagram />, <FaLinkedinIn />, <FaTiktok />].map((icon, idx) => (
+            <span key={idx} className="footer__icon">
+              {icon}
+            </span>
+          ))}
         </div>
       </div>
     </footer>
