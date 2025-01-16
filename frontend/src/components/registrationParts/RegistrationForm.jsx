@@ -46,11 +46,10 @@ const Registration = () => {
   };
 
   return (
-<<<<<<< HEAD
+
     <div className={`${styles.registrationWrapper} ${styles.registrationPage}`}>
-=======
-    <div className={styles.registrationWrapper}>
->>>>>>> 74ce200 (added registration page into the site)
+
+
       <div className={styles.registrationContainer}>
         <aside className={styles.registrationSidebar}>
           <h2>Create account</h2>

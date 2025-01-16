@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-/* Стили для страницы регистрации */
+
 .registrationWrapper.registrationPage {
   background-color: #325243; /* Новый фон */
 }
-=======
-/* RegistrationForm.module.css */
->>>>>>> 74ce200 (added registration page into the site)
 
 /* Стили для wrapper */
 .registrationWrapper {
