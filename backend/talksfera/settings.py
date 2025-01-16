@@ -27,10 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-AUTH_USER_MODEL = 'login.CustomUser' #коли додамо бд забрати
+AUTH_USER_MODEL = 'main.User'
+
 
 AUTHENTICATION_BACKENDS = [
-    'login.authentication.EmailOrPhoneBackend',  # Наш кастомний бекенд
     'django.contrib.auth.backends.ModelBackend', # Бекенд за замовчуванням
 ]
 
@@ -105,7 +105,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'talksfera_db', #idk
         'USER': 'root',
-        'PASSWORD': '84K731L582',
+        'PASSWORD': 'WhaDct18', # Пароль
         'HOST': 'localhost',
         'PORT': '3306',
     }

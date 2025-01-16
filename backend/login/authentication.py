@@ -1,8 +1,7 @@
-# login/authentication.py
-
 from django.contrib.auth.backends import BaseBackend
 from django.contrib.auth.hashers import check_password
-from .models import CustomUser
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 class EmailOrPhoneBackend(BaseBackend):
     """
@@ -10,11 +9,11 @@ class EmailOrPhoneBackend(BaseBackend):
     """
     def authenticate(self, request, username=None, password=None, **kwargs):
         try:
-            user = CustomUser.objects.get(email=username)
-        except CustomUser.DoesNotExist:
+            user = User.objects.get(email=username)
+        except User.DoesNotExist:
             try:
-                user = CustomUser.objects.get(phone_number=username)
-            except CustomUser.DoesNotExist:
+                user = User.objects.get(phone_number=username)
+            except User.DoesNotExist:
                 return None
 
         if user and check_password(password, user.password):
@@ -23,6 +22,6 @@ class EmailOrPhoneBackend(BaseBackend):
 
     def get_user(self, user_id):
         try:
-            return CustomUser.objects.get(pk=user_id)
-        except CustomUser.DoesNotExist:
+            return User.objects.get(pk=user_id)
+        except User.DoesNotExist:
             return None
