@@ -1,140 +1,111 @@
 .main-section {
-  background-color: #1f3b2f;
+  background-color: #325243;
   color: white;
   padding: 3rem 2rem;
   text-align: center;
+  font-family: 'SF UI Text', sans-serif;
 }
 
-.main-text h1 {
+.main-section__text {
+  margin-bottom: 2rem;
+}
+
+.main-section__title {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
-.main-text p {
+.main-section__subtitle {
   font-size: 1.2rem;
-  color: #d4d4d4;
-  margin-bottom: 2rem;
+  color: #b8b8b8;
 }
 
-.card-container {
+.main-section__cards {
   display: flex;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
 }
 
+
 .card {
-  width: 250px;
-  height: 340px;
+  width: 300px;
+  height: auto; /* Делаем высоту карточки автоматической для сохранения пропорций */
   padding: 1rem;
-  border-radius: 20px;
+  border-radius: 15px;
   text-align: center;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Выравнивание элементов по верхней части карточки */
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0);
-  transition: background 0.3s;
-  z-index: 1;
-  border-radius: 20px;
-}
-
-.card:hover::before {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-.card > * {
+  justify-content: space-between;
   position: relative;
-  z-index: 2;
+  background-color: white;
 }
 
-.card:nth-child(1) {
-  background-color: #d4e7c7;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
 }
 
-.card:nth-child(2) {
-  background-color: #c8e7ee;
-}
-
-.card:nth-child(3) {
-  background-color: #f8d2d7;
-}
-
-.card:nth-child(4) {
-  background-color: #fae3b4;
-}
-
-/* Универсальный стиль для всех изображений */
-.card img {
+.card__image {
   width: 100%;
-  height: 180px; /* Устанавливаем одинаковую высоту для всех картинок */
-  object-fit: cover; /* Изображение будет обрезаться по размеру карточки */
-  margin: 0 auto;
-  display: block;
+  height: 100%; /* Изображение будет занимать всю высоту карточки */
+  object-fit: cover; /* Сохранение пропорций изображения, заполняя область */
+  margin-bottom: 1rem;
 }
 
-.card:nth-child(3) img {
-  height: 235px; /* Уменьшаем изображение в 3-й карточке, но не слишком сильно */
-}
-
-.card h3 {
-  font-size: 1.4rem;
+.card__title {
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  color: #2f2f2f;
+  color: #1e1e1e;
+  font-family: 'Playfair Display', serif;
 }
 
-.card p {
+.card__description {
   font-size: 1rem;
-  color: #555;
+  color: #616161;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  margin-top: auto; /* Выравнивание текста по низу карточки */
+  margin-top: auto;
 }
 
-.arrow {
+.card__arrow {
   font-size: 1.2rem;
-  color: #2f2f2f;
+  color: #1e1e1e;
   transition: transform 0.3s ease;
 }
 
-.card:hover .arrow {
+.card:hover .card__arrow {
   transform: translateX(5px);
 }
 
+.card--green {
+  background-color: #97D187;
+}
+
+.card--blue {
+  background-color: #92CECE;
+}
+
+.card--pink {
+  background-color: #FF9A92;
+}
+
+.card--yellow {
+  background-color: #F8E06E;
+}
+
 @media (max-width: 768px) {
-  .card-container {
+  .main-section__cards {
     flex-direction: column;
     align-items: center;
   }
 
   .card {
-    width: 100%;
+    width: 90%;
   }
-}
-
-/* Убираем лишние отступы для 3-й карточки */
-.card:nth-child(3) {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Текст и изображение на одном уровне */
-}
-
-.card:nth-child(3) h3,
-.card:nth-child(3) p {
-  margin-bottom: 0; /* Убираем лишний отступ снизу */
 }

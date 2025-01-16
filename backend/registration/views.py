@@ -35,4 +35,6 @@ def register_therapist(request):
         form = TherapistRegistrationForm()
     return render(request, 'registration/register_therapist.html', {'form': form})
 
-# Create your views here.
+# def register(request):
+#     return render(request, 'registration/register.html')
+

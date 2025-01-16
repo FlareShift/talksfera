@@ -1,64 +1,108 @@
-.testimonials-carousel {
-  padding: 40px;
-  background-color: #f8f4f0;
+.testimonials {
+  padding: 40px 20px;
+  background: linear-gradient(180deg, #f8f4f0, #f9f6f3);
   text-align: center;
 }
 
-.carousel-title {
+.testimonials__title {
   font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color: #2f4f4f;
 }
 
-.testimonial-card {
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 0 auto;
-  max-width: 500px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: left;
+.testimonials__slider .slick-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.card-header {
+.testimonials__slider .slick-slide {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.testimonials__card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 25px;
+  max-width: 350px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonials__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonials__header {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.card-avatar {
+.testimonials__avatar {
   width: 50px;
   height: 50px;
-  background-color: #ddd;
   border-radius: 50%;
   margin-right: 15px;
+  background: #ddd;
 }
 
-.card-info {
+.testimonials__info {
   flex: 1;
 }
 
-.card-name {
+.testimonials__name {
   font-size: 1.2rem;
   font-weight: bold;
   margin: 0;
   color: #2f4f4f;
 }
 
-.card-role {
+.testimonials__role {
   font-size: 0.9rem;
   color: #6c757d;
   margin: 0;
 }
 
-.card-stars {
+.testimonials__stars {
   font-size: 1.1rem;
   color: #ffbf00;
+  margin-left: auto;
 }
 
-.card-text {
+.testimonials__text {
   font-size: 1rem;
   color: #4a4a4a;
   line-height: 1.5;
+  margin-top: 15px;
+}
+
+.slick-dots li button::before {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.slick-dots li.slick-active button::before {
+  color: #2f4f4f;
+}
+
+@media (max-width: 1024px) {
+  .testimonials__card {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials__title {
+    font-size: 1.6rem;
+  }
+
+  .testimonials__slider .slick-slide {
+    padding: 5px;
+  }
 }

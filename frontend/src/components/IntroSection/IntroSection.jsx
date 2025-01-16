@@ -1,29 +1,31 @@
-import React from 'react';
-import './IntroSection.css';
-
-import introSectionImage from "../../assets/images/IntroSection/IntroSection.png"; // Импорт изображения
+import React from "react";
+import "./IntroSection.css";
+import introSectionImage from "../../assets/images/IntroSection/IntroSection.svg";
+import decorativeImage from "../../assets/images/IntroSection/decorative.svg";
 
 const IntroSection = () => {
   return (
-    <div className="intro-section">
-      <div className="intro-text">
-        <h2 className="intro-title">
+    <section className="intro">
+      <div className="intro__text">
+        <h2 className="intro__title">
+          <img
+            src={decorativeImage}
+            alt="Decorative icon"
+            className="intro__decorative"
+          />
           How therapy and <br />
           psychiatry work together
         </h2>
-        <p className="intro-description">
-          Welcome to <span className="highlight">TalkSfera</span>, a platform dedicated to transforming the way
+        <p className="intro__description">
+          Welcome to <span className="intro__highlight">TalkSfera</span>, a platform dedicated to transforming the way
           you approach mental health. Whether you're seeking therapy, education, or professional growth, we
           provide a comprehensive space tailored to your needs.
         </p>
       </div>
-      <div className="intro-image">
-        <img
-          src={introSectionImage} // Используем правильный импорт
-          alt="Therapy illustration"
-        />
+      <div className="intro__image">
+        <img src={introSectionImage} alt="Therapy illustration" />
       </div>
-    </div>
+    </section>
   );
 };
 

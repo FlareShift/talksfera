@@ -1,27 +1,29 @@
-/* Общий стиль контейнера */
 .faq-container {
-  width: 80%;
-  max-width: 900px;
+  width: 90%;
+  max-width: 1200px;
   margin: 40px auto;
-  background-color: #f9f4ed; /* Бежевый фон */
+  background-color: #f9f4ed;
   font-family: Arial, sans-serif;
-  padding: 20px;
+  padding: 20px 40px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.faq-container h2 {
+.faq-title {
   text-align: left;
   color: #2f2f2f;
-  font-size: 24px;
+  font-size: 1.8rem;
   margin-bottom: 20px;
 }
 
-/* Список FAQ */
-.faq-list {
+.faq-content {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  gap: 20px;
+}
+
+.faq-list {
+  flex: 1;
+  padding-right: 20px;
 }
 
 .faq-item {
@@ -34,22 +36,34 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1rem;
   color: #2f2f2f;
 }
 
 .faq-question span:last-child {
-  font-size: 14px;
-  color: #6d6d6d;
+  font-size: 1.2rem;
+  color: #006d77;
 }
 
 .faq-answer {
   padding: 10px 0;
-  font-size: 16px;
+  font-size: 1rem;
   color: #4a4a4a;
 }
 
-/* Нижняя ссылка */
+.faq-illustration {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq-illustration img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 .faq-footer {
   margin-top: 20px;
   text-align: left;
@@ -63,4 +77,22 @@
 
 .faq-footer a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .faq-content {
+    flex-direction: column;
+  }
+
+  .faq-list {
+    padding-right: 0;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+  }
+
+  .faq-answer {
+    font-size: 0.9rem;
+  }
 }
