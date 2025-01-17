@@ -22,25 +22,30 @@ const ComparisonTable = () => {
   ];
 
   return (
-    <section className="comparison">
-      <h2 className="comparison__title">
-        <span className="comparison__highlight">TalkSfera</span> vs. traditional in-office therapy
-      </h2>
-      <div className="comparison__header">
-        <div className="comparison__cell comparison__feature">Features</div>
-        <div className="comparison__cell comparison__brand">
-          <img src={logo} alt="TalkSfera Logo" className="comparison__logo" />
-          TalkSfera
-        </div>
-        <div className="comparison__cell comparison__office">In-office</div>
+    <section className="comparison-container"> {/* Обертка для применения фона */}
+      <div className="comparison__intro">
+        <h2 className="comparison__title">
+          <span className="comparison__highlight">TalkSfera</span> vs. traditional in-office therapy
+        </h2>
       </div>
-      {data.map((item, index) => (
-        <div className="comparison__row" key={index}>
-          <div className="comparison__cell comparison__feature">{item.feature}</div>
-          <div className="comparison__cell comparison__brand">{item.talksfera}</div>
-          <div className="comparison__cell comparison__office">{item.inOffice}</div>
+
+      <section className="comparison">
+        <div className="comparison__header">
+          <div className="comparison__cell comparison__feature">Features</div>
+          <div className="comparison__cell comparison__brand">
+            <img src={logo} alt="TalkSfera Logo" className="comparison__logo" />
+            TalkSfera
+          </div>
+          <div className="comparison__cell comparison__office">In-office</div>
         </div>
-      ))}
+        {data.map((item, index) => (
+          <div className="comparison__row" key={index}>
+            <div className="comparison__cell comparison__feature">{item.feature}</div>
+            <div className="comparison__cell comparison__brand">{item.talksfera}</div>
+            <div className="comparison__cell comparison__office">{item.inOffice}</div>
+          </div>
+        ))}
+      </section>
     </section>
   );
 };

@@ -1,0 +1,174 @@
+
+.registrationWrapper.registrationPage {
+  background-color: #325243; /* Новый фон */
+}
+
+/* Стили для wrapper */
+.registrationWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 0;
+  padding-top: 20px; /* Уменьшен отступ сверху */
+  min-height: 100vh; /* Растягиваем по высоте */
+}
+
+/* Стили для контейнера формы */
+.registrationContainer {
+  display: flex;
+  width: 80%;
+  max-width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  min-height: 500px;
+  height: auto;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+  padding: 0 15px;
+  position: relative;
+}
+
+/* Стили для сайдбара */
+.registrationSidebar ul li {
+  font-size: 1rem;
+  margin-bottom: 18px;
+  color: #666;
+  list-style: none;
+  padding-left: 0;
+}
+
+.registrationSidebar .active {
+  font-weight: bold;
+  color: #ff5722;
+  background: none;
+}
+
+.registrationSidebar h2 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.registrationFormSection {
+  flex: 4;
+  padding: 40px;
+  position: relative;
+  min-width: 500px;
+  box-sizing: border-box;
+}
+
+.registrationProgressBar {
+  height: 6px;
+  background: #eee;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.registrationProgress {
+  height: 100%;
+  background: #ff5722;
+  transition: width 0.3s ease;
+}
+
+.registrationFormStep h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.registrationFormSection form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+}
+
+.registrationFormSection form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+  background: #f9fafa;
+}
+
+.registrationFormSection .dobInputs select {
+  width: 30%;
+  display: inline-block;
+  margin-right: 12px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #f9fafa;
+  font-size: 14px;
+  color: #333;
+}
+
+.registrationFormSection .dobInputs select:last-child {
+  margin-right: 0;
+}
+
+.registrationFormNavigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.registrationFormSection button {
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  background: #ff5722;
+  color: #fff;
+  width: auto;
+  max-width: 100%;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s, transform 0.1s ease-in-out;
+}
+
+.registrationFormSection button:hover {
+  background: #e64a19;
+}
+
+.registrationFormSection button:active {
+  transform: scale(0.98);
+}
+
+.registrationFormSection button:first-of-type {
+  background: #ddd;
+  color: #333;
+}
+
+.registrationFormSection button:last-of-type {
+  background: #ff5722;
+  color: #fff;
+}
+
+.skipButton {
+  background: #ffccbc;
+  color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.registrationImageSection {
+  flex: 5;
+  background: url('../../assets/images/RegistrationSection/registerImg.svg') no-repeat center center;
+  background-size: contain;
+  background-position: center;
+  width: 80%;
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;
+}
