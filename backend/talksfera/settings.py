@@ -89,7 +89,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'talksfera_db', #idk
         'USER': 'root',
-        'PASSWORD': 'WhaDct18',
+        'PASSWORD': '1',
         'HOST': 'localhost',
         'PORT': '3306',
     }
