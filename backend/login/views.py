@@ -1,41 +1,53 @@
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.http import JsonResponse
+from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-from django.http import JsonResponse
-from django.contrib.auth import authenticate, login
+import json
 
 
+# Кастомный сериализатор для JWT
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
         data = super().validate(attrs)
         data['message'] = "Login successful"
         return data
 
+
+# Кастомный класс для получения JWT токенов
 class CustomTokenObtainPairView(TokenObtainPairView):
     serializer_class = CustomTokenObtainPairSerializer
 
 
+# Функция для обработки логина
 def login_view(request):
     if request.method == 'POST':
         if request.content_type == 'application/json':  # Для API-запитів
-            import json
             data = json.loads(request.body)
-            username = data.get('username')  # email або телефон
+            username = data.get('username')  # email или телефон
             password = data.get('password')
-        else:  # Для класичної форми
+        else:  # Для класической формы
             username = request.POST.get('username')
             password = request.POST.get('password')
 
-        # Аутентифікація
+        # Аутентификация
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            login(request, user)
+            # Генерация JWT токенов
+            refresh = RefreshToken.for_user(user)
+            access_token = refresh.access_token
+
+            # Возвращаем токены в ответе
             if request.content_type == 'application/json':
-                return JsonResponse({'message': 'Login successful'}, status=200)
+                return JsonResponse({
+                    'message': 'Login successful',
+                    'access': str(access_token),
+                    'refresh': str(refresh),
+                }, status=200)
             else:
-                return redirect('home')  # Змінити на вашу головну сторінку
+                return redirect('home')  # Перенаправление на домашнюю страницу (измените на вашу)
         else:
             if request.content_type == 'application/json':
                 return JsonResponse({'error': 'Invalid email/phone or password'}, status=401)
@@ -43,5 +55,3 @@ def login_view(request):
                 messages.error(request, "Invalid email/phone or password")
 
     return render(request, 'login/login.html')
-
-

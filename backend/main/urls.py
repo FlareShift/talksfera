@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -12,9 +12,10 @@ router.register(r'users', UserViewSet, basename='user')
 
 
 urlpatterns = [
+    path('api/', include(router.urls)),
+
     path('', views.index, name='home'),
     path('register', views.register_user, name='register_user'),
-    path('login/', login_view, name='login'),
     path('courses', views.resources_courses, name='resources_courses'),
     path('about-us', views.about_us, name='about_us'),
     path('business', views.business, name='business'),
