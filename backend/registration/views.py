@@ -1,16 +1,19 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
-from .forms import RegistrationForm, TherapistRegistrationForm
+from .forms import RegistrationForm
 
 def register_patient(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('home')
+            user = form.save()  # Збереження користувача
+            login(request, user)  # Логін після реєстрації
+            return redirect('home')  # Перехід на головну сторінку після реєстрації
+        else:
+            print(form.errors)  # Вивести помилки форми для діагностики
     else:
         form = RegistrationForm()
+
     return render(request, 'registration/register_patient.html', {'form': form})
 
 def register_therapist(request):
@@ -34,7 +37,4 @@ def register_therapist(request):
     else:
         form = TherapistRegistrationForm()
     return render(request, 'registration/register_therapist.html', {'form': form})
-
-# def register(request):
-#     return render(request, 'registration/register.html')
 

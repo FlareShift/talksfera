@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-AUTH_USER_MODEL = 'registration.CustomUser' #коли додамо бд забрати
+AUTH_USER_MODEL = 'main.User' 
 
 # Application definition
 
@@ -89,11 +89,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'talksfera_db', #idk
         'USER': 'root',
-        'PASSWORD': '84K731L582',
+        'PASSWORD': 'WhaDct18',
         'HOST': 'localhost',
         'PORT': '3306',
     }
 }
+
 
 
 # Password validation
