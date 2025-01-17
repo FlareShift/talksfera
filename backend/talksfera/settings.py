@@ -27,6 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'main.User'
+
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend', # Бекенд за замовчуванням
+]
+
 
 # Application definition
 
@@ -40,8 +47,18 @@ INSTALLED_APPS = [
     'main',
     'corsheaders',
     'rest_framework',
+    'login.apps.LoginConfig',
+    'rest_framework_simplejwt',
     'registration',
 ]
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -88,7 +105,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'talksfera_db', #idk
         'USER': 'root',
-        'PASSWORD': '84K731L582',
+        'PASSWORD': '1',
         'HOST': 'localhost',
         'PORT': '3306',
     }
