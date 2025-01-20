@@ -29,6 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+
 AUTH_USER_MODEL = 'main.User'
 
 
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
     'main',
     'corsheaders',
     'rest_framework',
+    'registration.apps.RegistrationConfig',
     'login.apps.LoginConfig',
     'rest_framework_simplejwt',
     'registration',
@@ -112,6 +114,7 @@ DATABASES = {
         'PORT': config('DB_PORT', default='3306'),
     }
 }
+
 
 
 # Password validation
