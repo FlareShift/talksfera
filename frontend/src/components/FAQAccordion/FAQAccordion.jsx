@@ -23,32 +23,34 @@ const FAQAccordion = () => {
 
   return (
     <section className="faq-container">
-      <h2 className="faq-title">Frequently Asked Questions</h2>
-      <div className="faq-content">
-        <div className="faq-list">
-          {faqs.map((faq, index) => (
-            <div key={index} className="faq-item">
-              <div
-                className="faq-question"
-                onClick={() => handleToggle(index)}
-              >
-                <span>{faq.question}</span>
-                <span>{activeIndex === index ? "▲" : "▼"}</span>
-              </div>
-              {activeIndex === index && (
-                <div className="faq-answer">
-                  <p>{faq.answer}</p>
+      <div className="faq-body">
+        <h2 className="faq-title">Frequently Asked Questions</h2>
+        <div className="faq-content">
+          <div className="faq-list">
+            {faqs.map((faq, index) => (
+              <div key={index} className="faq-item">
+                <div
+                  className="faq-question"
+                  onClick={() => handleToggle(index)}
+                >
+                  <span>{faq.question}</span>
+                  <span>{activeIndex === index ? "▲" : "▼"}</span>
                 </div>
-              )}
-            </div>
-          ))}
+                {activeIndex === index && (
+                  <div className="faq-answer">
+                    <p>{faq.answer}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="faq-illustration">
+            <img src={illustration} alt="Illustration" />
+          </div>
         </div>
-        <div className="faq-illustration">
-          <img src={illustration} alt="Illustration" />
+        <div className="faq-footer">
+          <a href="#more-faqs">More frequently asked questions</a>
         </div>
-      </div>
-      <div className="faq-footer">
-        <a href="#more-faqs">More frequently asked questions</a>
       </div>
     </section>
   );

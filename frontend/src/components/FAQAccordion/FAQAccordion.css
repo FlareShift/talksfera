@@ -1,8 +1,9 @@
+/* Уникальный фон для компонента FAQAccordion */
 .faq-container {
   width: 90%;
   max-width: 1200px;
   margin: 40px auto;
-  background-color: #f9f4ed;
+  background-color: #FFFCF5; /* Новый фон только для этой части */
   font-family: Arial, sans-serif;
   padding: 20px 40px;
   border-radius: 8px;
@@ -79,6 +80,7 @@
   text-decoration: underline;
 }
 
+/* Адаптивность */
 @media (max-width: 768px) {
   .faq-content {
     flex-direction: column;
