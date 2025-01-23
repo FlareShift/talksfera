@@ -1,108 +1,123 @@
-.how-it-works-section {
-  padding: 60px;
-  background: linear-gradient(135deg, #f8f4f0, #e3e0d5); /* Градиентный фон */
-  border-radius: 20px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1); /* Мягкая тень */
+.how-it-works {
+  position: relative;
+  padding: 5rem 2rem;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+  overflow: hidden;
 }
 
-.section-title {
-  font-size: 2.5rem; /* Увеличен размер заголовка */
-  font-weight: 700;
+.how-it-works__decorative-line {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.5;
+
+  mix-blend-mode: difference;
+}
+
+.how-it-works__text,
+.how-it-works__image img {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}
+
+.how-it-works__title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
   text-align: center;
-  color: #2f4f4f; /* Возвращен серый цвет */
-  margin-bottom: 50px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
-.steps-container {
+.how-it-works__title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 2px;
+  background-color: #5bb97a;
+  margin: 0.5rem auto 0;
+}
+
+.how-it-works__steps {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Уменьшен отступ между шагами */
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.step {
+.how-it-works__step {
   display: flex;
   align-items: center;
-  gap: 40px; /* Уменьшен отступ между картинкой и текстом */
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 30px;
-  opacity: 0;
-  transform: translateX(-30px); /* Начальная позиция для анимации */
-  animation: slideIn 1s ease-in-out forwards;
+  justify-content: space-between;
+  gap: 2rem;
 }
 
-.step:last-child {
-  border-bottom: none;
+.how-it-works__step.left .how-it-works__content {
+  flex-direction: row;
 }
 
-.step-image img {
-  width: 160px; /* Увеличен размер картинки */
-  height: 160px;
-  border-radius: 50%;
-  transition: transform 0.3s ease-in-out;
+.how-it-works__step.right .how-it-works__content {
+  flex-direction: row-reverse;
 }
 
-.step-content {
+.how-it-works__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.how-it-works__text {
   flex: 1;
+  max-width: 500px;
+  padding: 1rem;
+  background: transparent;
 }
 
-.step-title {
-  font-size: 1.5rem; /* Уменьшен размер заголовка для шага */
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: #2f4f4f; /* Возвращен серый цвет для заголовков */
+.how-it-works__step-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
 }
 
-.step-description {
-  font-size: 1.1rem; /* Уменьшен размер текста описания */
-  color: #4a4a4a; /* Темно-серый цвет для текста */
+.how-it-works__step-description {
+  font-size: 1rem;
+  color: #555;
   line-height: 1.6;
-  text-align: justify;
-  margin-top: 10px;
 }
 
-/* Анимация появления с эффектом сдвига */
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-30px); /* Начальный сдвиг слева */
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.how-it-works__image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
 }
 
-/* Чередование направления: */
-.step:nth-child(odd) {
-  flex-direction: row-reverse; /* Для нечётных шагов картинка справа */
-  animation: slideInRight 1s ease-in-out forwards;
+.how-it-works__image img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  background: transparent;
 }
 
-.step:nth-child(even) {
-  flex-direction: row; /* Для чётных шагов картинка слева */
-  animation: slideInLeft 1s ease-in-out forwards;
-}
+@media (max-width: 768px) {
+  .how-it-works__step.left .how-it-works__content,
+  .how-it-works__step.right .how-it-works__content {
+    flex-direction: column;
+  }
 
-@keyframes slideInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(30px); /* Начальный сдвиг справа для чётных */
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-30px); /* Начальный сдвиг слева для нечётных */
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
+  .how-it-works__image {
+    max-width: 100%;
   }
 }

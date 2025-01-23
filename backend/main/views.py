@@ -1,8 +1,15 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 import os
 from django.conf import settings
 
+from rest_framework import viewsets
+from .models import User, Sex
+from .serializers import UserSerializer
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 def index(request):
     # Проверяем, существует ли файл React сборки
@@ -22,11 +29,6 @@ def home(request):
 
 def register_user(request):
     return HttpResponse("register_user")
-
-
-def login(request):
-    return HttpResponse("login")
-
 
 def resources_courses(request):
     return HttpResponse("resources_courses")
@@ -50,3 +52,6 @@ def contact(request):
 
 def therapist(request):
     return HttpResponse("therapist")
+
+def sample_view(request):
+    return JsonResponse({"message": "Hello from Django!"})

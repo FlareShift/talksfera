@@ -1,60 +1,65 @@
-import React from 'react';
-import './PsychotherapySection.css';
+import React from "react";
+import "./PsychotherapySection.css";
 
 import FirstImg from "../../assets/images/PsychotherapySection/First.png";
 import SecondImg from "../../assets/images/PsychotherapySection/Second.png";
 import ThirdImg from "../../assets/images/PsychotherapySection/Third.png";
 import FourthImg from "../../assets/images/PsychotherapySection/Fourth.png";
 
+import HoverFirstImg from "../../assets/images/PsychotherapySection/hoverFirst.png";
+import HoverSecondImg from "../../assets/images/PsychotherapySection/hoverSecond.png";
+import HoverThirdImg from "../../assets/images/PsychotherapySection/hoverThird.png";
+import HoverFourthImg from "../../assets/images/PsychotherapySection/hoverFourth.png";
+
 const cards = [
   {
     defaultImg: FirstImg,
-    hoverImg: "https://via.placeholder.com/250x170/ffb3b3/333333?text=Hover+Image+1", // Временно заменено на цвет
+    hoverImg: HoverFirstImg,
     title: "Navigate life's challenges with resilience and clarity.",
   },
   {
     defaultImg: SecondImg,
-    hoverImg: "https://via.placeholder.com/250x170/99c2ff/333333?text=Hover+Image+2", // Временно заменено на цвет
-    title: 'Regain control over stress and anxiety to find your inner calm.',
+    hoverImg: HoverSecondImg,
+    title: "Regain control over stress and anxiety to find your inner calm.",
   },
   {
     defaultImg: ThirdImg,
-    hoverImg: "https://via.placeholder.com/250x170/ffcccc/333333?text=Hover+Image+3", // Временно заменено на цвет
-    title: 'Build meaningful relationships and strengthen emotional connections.',
+    hoverImg: HoverThirdImg,
+    title: "Build meaningful relationships and strengthen emotional connections.",
   },
   {
     defaultImg: FourthImg,
-    hoverImg: "https://via.placeholder.com/250x170/ffffb3/333333?text=Hover+Image+4", // Временно заменено на цвет
-    title: 'Transform obstacles into opportunities for personal growth.',
+    hoverImg: HoverFourthImg,
+    title: "Transform obstacles into opportunities for personal growth.",
   },
 ];
 
 const PsychotherapySection = () => {
   return (
-    <div className="psychotherapy-section">
-      <h2 className="section-title">
+    <section className="psychotherapy">
+      <h2 className="psychotherapy__title">
         Psychotherapy helps to make life more coherent and harmonious
       </h2>
-      <div className="card-container">
+      <div className="psychotherapy__cards">
         {cards.map((card, index) => (
-          <div key={index} className="card">
-            <div className="image-container">
+          <div key={index} className="psychotherapy__card">
+            <div className="psychotherapy__image-container">
               <img
                 src={card.defaultImg}
                 alt={`Illustration ${index + 1}`}
-                className="card-image default"
+                className="psychotherapy__image psychotherapy__image--default"
               />
               <img
                 src={card.hoverImg}
                 alt={`Illustration ${index + 1} hover`}
-                className="card-image hover"
+                className="psychotherapy__image psychotherapy__image--hover"
               />
             </div>
-            <p className="card-title">{card.title}</p>
+            <p className="psychotherapy__card-title">{card.title}</p>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

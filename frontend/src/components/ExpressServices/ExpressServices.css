@@ -1,41 +1,53 @@
-/* Общий стиль контейнера */
 .express-services {
-  background-color: #264a37; /* Тёмно-зелёный фон */
+  background-color: #325243;
   padding: 40px 20px;
   color: #fff;
   font-family: Arial, sans-serif;
   text-align: center;
 }
 
-.express-services h2 {
-  font-size: 24px;
+.express-services__title {
+  font-size: 1.8rem;
   margin-bottom: 20px;
   color: #e5e5e5;
 }
 
-/* Стили для контейнера с услугами */
-.services-container {
+.express-services__container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 50px;
   gap: 40px;
 }
 
-/* Стили для каждого элемента услуги */
-.service-item {
+.express-services__item {
   max-width: 200px;
   text-align: center;
 }
 
-.phone-numbers p {
+.express-services__phones {
+  margin-bottom: 10px;
+}
+
+.express-services__phone {
   margin: 0;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: bold;
   color: #f5f5f5;
 }
 
-.service-description {
+.express-services__description {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 0.9rem;
   color: #c9c9c9;
+}
+
+@media (max-width: 768px) {
+  .express-services__item {
+    max-width: 100%;
+  }
+}
+
+#service-4 .express-services__description {
+  margin-top: 28.5px;
 }

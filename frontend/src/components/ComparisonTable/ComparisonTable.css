@@ -1,56 +1,129 @@
-.comparison-table {
-  background-color: #243e30; /* Темно-зеленый фон */
-  color: #fff;
-  padding: 40px 20px;
-  text-align: center;
+/* Уникальный фон для только компонента ComparisonTable */
+.comparison-container {
+  background-color: #325243; /* Зеленый фон */
+  padding: 20px;
 }
 
-.comparison-table h2 {
-  font-size: 24px;
+/* Обертка для заголовка */
+.comparison__intro {
+  text-align: center; /* Центрируем текст */
   margin-bottom: 20px;
 }
 
-.comparison-table .highlight {
-  color: #66c57c; /* Зеленый цвет */
-}
-
-.table-container {
-  overflow-x: auto; /* Для мобильных устройств */
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0 auto;
-  font-size: 16px;
-}
-
-th, td {
-  padding: 15px;
+/* Основная структура таблицы */
+.comparison {
+  width: 80%;
+  margin: 60px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  color: white;
   text-align: center;
-  border: 1px solid #66c57c; /* Граница зеленого цвета */
+  font-family: Arial, sans-serif;
+  display: table;
+  table-layout: fixed; /* Обеспечивает равные ширины для колонок */
 }
 
-th {
-  background-color: #2e573e; /* Темно-зеленый оттенок */
-  color: #fff;
+.comparison__title {
+  font-size: 2rem;
+  margin: 20px 0;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center; /* Центрируем текст по горизонтали */
 }
 
-tr:nth-child(even) {
-  background-color: #315849; /* Чередование строк */
+.comparison__highlight {
+  color: #a6df9b;
 }
 
-tr:nth-child(odd) {
-  background-color: #243e30;
+.comparison__header,
+.comparison__row {
+  display: table-row; /* Для выравнивания в одну строку */
 }
 
-td {
-  color: #fff;
+.comparison__header {
+  background-color: #1b3024;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 10px 0;
 }
 
+.comparison__row:nth-child(odd) {
+  background-color: #2d4236;
+}
+
+.comparison__row:nth-child(even) {
+  background-color: #325243;
+}
+
+/* Ячейки */
+.comparison__cell {
+  display: table-cell; /* Для выравнивания ячеек по высоте */
+  padding: 15px;
+  border-right: 2px solid #4a6550;
+}
+
+/* Первая колонка - особенности */
+.comparison__feature {
+  font-weight: bold;
+  text-align: left;
+  padding-left: 20px;
+}
+
+/* Вторая колонка - TalkSfera */
+.comparison__brand {
+  background-color: white; /* Белый фон */
+  color: #243e30; /* Темный текст */
+  display: flex;
+  justify-content: center; /* Горизонтальное выравнивание по центру */
+  align-items: center; /* Вертикальное выравнивание по центру */
+  padding: 15px 0;
+  border-right: none; /* Убираем правую границу у второй колонки */
+  text-align: center;
+  min-height: 30px; /* Убедитесь, что ячейка имеет достаточную высоту */
+}
+
+/* Третья колонка - In-office */
+.comparison__office {
+  display: table-cell;
+  text-align: center;
+}
+
+/* Логотип в заголовке */
+.comparison__logo {
+  width: 40px;
+  margin-bottom: 5px;
+}
+
+/* Убираем правую границу у последней ячейки */
+.comparison__cell:last-child {
+  border-right: none;
+}
+
+/* Адаптивность */
 @media (max-width: 768px) {
-  th, td {
-    font-size: 14px;
+  .comparison {
+    width: 95%;
+  }
+
+  .comparison__header,
+  .comparison__row {
+    flex-direction: column;
+    display: block; /* Для адаптивности меняем на блок */
+  }
+
+  .comparison__cell {
+    text-align: center;
     padding: 10px;
+    border-right: none;
+    border-bottom: 1px solid #4a6550;
+  }
+
+  .comparison__cell:last-child {
+    border-bottom: none;
+  }
+
+  .comparison__feature {
+    text-align: center;
+    padding-left: 0;
   }
 }
