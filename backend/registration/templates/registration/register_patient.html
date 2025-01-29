@@ -5,64 +5,29 @@
 </form>
 
 
-<!-- <form method="post">
-  {% csrf_token %}
-  
-  <div>
-    <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
-    {{ form.name }}
-  </div>
-  
-  <div>
-    <label for="{{ form.surname.id_for_label }}">{{ form.surname.label }}</label>
-    {{ form.surname }}
-  </div>
-  
-  <div>
-    <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
-    {{ form.email }}
-  </div>
-  
-  <div>
-    <label for="{{ form.phone_number.id_for_label }}">{{ form.phone_number.label }}</label>
-    {{ form.phone_number }}
-  </div>
-  
-  <div>
-    <label for="{{ form.birth_date.id_for_label }}">{{ form.birth_date.label }}</label>
-    {{ form.birth_date }}
-  </div>
-  
-  <div>
-    <label for="{{ form.sex.id_for_label }}">{{ form.sex.label }}</label>
-    {{ form.sex }}
-  </div>
-  
-  <div>
-    <label for="{{ form.language.id_for_label }}">{{ form.language.label }}</label>
-    {{ form.language }}
-  </div>
-  
-  <div>
-    <label for="{{ form.country.id_for_label }}">{{ form.country.label }}</label>
-    {{ form.country }}
-  </div>
-  
-  <div>
-    <label for="{{ form.region.id_for_label }}">{{ form.region.label }}</label>
-    {{ form.region }}
-  </div>
-  
-  <div>
-    <label for="{{ form.city.id_for_label }}">{{ form.city.label }}</label>
-    {{ form.city }}
-  </div>
-  
-  <div>
-    <label for="{{ form.accept_terms.id_for_label }}">{{ form.accept_terms.label }}</label>
-    {{ form.accept_terms }}
-  </div>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        const countryField = document.getElementById('id_country');
+        const cityField = document.getElementById('id_city');
 
-  <button type="submit">Зареєструватися</button>
-</form>
- -->
+        countryField.addEventListener('change', function() {
+            const country = countryField.value; // Використовуємо назву країни, а не ID
+
+            fetch(`/get_cities_by_country/${country}/`)
+                .then(response => response.json())
+                .then(data => {
+                    cityField.innerHTML = '';
+                    cityField.appendChild(new Option("Виберіть місто", "")); // Додаємо пустий варіант
+
+                    data.cities.forEach(function(city) {
+                        const option = document.createElement('option');
+                        option.value = city;  // Використовуємо назву міста як значення
+                        option.text = city;
+                        cityField.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Помилка:', error));
+        });
+    });
+</script>
+

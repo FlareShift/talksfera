@@ -37,6 +37,9 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
+CSRF_COOKIE_HTTPONLY = True
+CSRF_USE_SESSIONS = True
+
 
 # Application definition
 
@@ -53,7 +56,6 @@ INSTALLED_APPS = [
     'registration.apps.RegistrationConfig',
     'login.apps.LoginConfig',
     'rest_framework_simplejwt',
-    'registration',
 ]
 
 
@@ -73,6 +75,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.timezone.TimeZoneMiddleware',
 ]
 
 CORS_ALLOWED_ORIGINS = [

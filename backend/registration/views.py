@@ -1,40 +1,42 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
+from .forms import PatientRegistrationForm
+from .forms import TherapistRegistrationForm
 from .forms import RegistrationForm
+from django.http import JsonResponse
+from main.models.LocationModel import Location
 
 def register_patient(request):
-    if request.method == 'POST':
-        form = RegistrationForm(request.POST)
+    if request.method == "POST":
+        form = PatientRegistrationForm(request.POST)
         if form.is_valid():
-            user = form.save()  # Збереження користувача
-            login(request, user)  # Логін після реєстрації
-            return redirect('home')  # Перехід на головну сторінку після реєстрації
-        else:
-            print(form.errors)  # Вивести помилки форми для діагностики
+            user = form.save()
+            user.timezone = form.cleaned_data['timezone']
+            login(request, user)  # Автоматичний вхід після реєстрації
+            return redirect("home")  # Заміни на URL домашньої сторінки
     else:
-        form = RegistrationForm()
+        form = PatientRegistrationForm()
+    return render(request, "registration/register_patient.html", {"form": form})
 
-    return render(request, 'registration/register_patient.html', {'form': form})
 
 def register_therapist(request):
     if request.method == 'POST':
         form = TherapistRegistrationForm(request.POST, request.FILES)
         if form.is_valid():
-            user = form.save(commit=False)
+            user = form.save() 
+            user.timezone = form.cleaned_data['timezone']
             user.is_therapist = True
             user.save()
-            TherapistProfile.objects.create(
-                user=user,
-                education=form.cleaned_data['education'],
-                certificates=form.cleaned_data['certificates'],
-                experience_years=form.cleaned_data['experience_years'],
-                therapy_types=form.cleaned_data['therapy_types'],
-                treatment_methods=form.cleaned_data['treatment_methods'],
-                availability=form.cleaned_data['availability']
-            )
             login(request, user)
             return redirect('home')
+        else:
+            print(form.errors)  # Вивести помилки, якщо форма не валідна
     else:
         form = TherapistRegistrationForm()
     return render(request, 'registration/register_therapist.html', {'form': form})
+
+def get_cities(request, country):
+    cities = Location.objects.filter(country=country).values_list('city', flat=True)
+    return JsonResponse({'cities': list(cities)})
+
 

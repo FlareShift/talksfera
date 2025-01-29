@@ -7,5 +7,5 @@ class Therapist_Specialization(models.Model):
     specialization = models.ForeignKey(Specialization, on_delete=models.CASCADE)
 
     class Meta:
-
         unique_together = ('therapist', 'specialization')
+        db_table = 'main_therapist_specialization'

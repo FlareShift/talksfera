@@ -9,4 +9,6 @@ class User_Language(models.Model):
     class Meta:
         unique_together = ('user', 'language')
 
+
+
     
