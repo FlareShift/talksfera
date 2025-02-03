@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/Header/Header';
+import FloatingMenu from '../components/FloatingMenu/FloatingMenu';
 import MainSection from '../components/MainSection/MainSection';
 import ScrollingLogos from '../components/ScrollingLogos/ScrollingLogos';
 import IntroSection from '../components/IntroSection/IntroSection';
@@ -15,6 +16,7 @@ const MainPage = () => {
   return (
     <>
       <Header />
+      <FloatingMenu />
       <MainSection />
       <ScrollingLogos />
       <IntroSection />

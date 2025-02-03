@@ -1,0 +1,135 @@
+/* Контейнер для основного контента */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Выравнивание элементов по центру */
+  width: 100%;
+  padding-top: 20px;
+}
+
+/* Заголовок дневника */
+.emotion-diary h2 {
+  text-align: center; /* Центрирование текста */
+  font-size: 1.8rem;
+  color: #3a3a3a;
+  margin-bottom: 15px;
+}
+
+/* Поле ввода для текста */
+.emotion-diary-textarea {
+  width: 100%; /* Все элементы по ширине */
+  height: 150px;
+  padding: 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #d1d1d1;
+  margin-bottom: 15px;
+  resize: none;
+  background-color: #f4f7f6;
+  box-sizing: border-box;
+}
+
+/* Группа кнопок */
+.button-group {
+  display: flex;
+  flex-direction: row; /* Размещение кнопок в одну линию */
+  gap: 10px; /* Отступы между кнопками */
+  width: 100%;
+  justify-content: center; /* Выравнивание по центру */
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* Кнопка добавления записи */
+.add-entry-button {
+  width: 48%; /* Кнопки занимают 48% ширины */
+  padding: 10px;
+  background-color: #6a8e7f;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-entry-button:hover {
+  background-color: #577469;
+}
+
+/* Кнопка История записей */
+.history-button {
+  width: 48%; /* Кнопки занимают 48% ширины */
+  text-align: center;
+}
+
+.history-link {
+  text-decoration: none;
+  width: 100%;
+}
+
+.history-link button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff6f61;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.history-link button:hover {
+  background-color: #e55a4e;
+}
+
+/* Контейнер для шкалы настроения */
+.mood-slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Отображение числа рядом с прокруткой */
+.mood-value {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #3a3a3a;
+}
+/* Контейнер для дневника */
+.emotion-mood-diary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Не центрируем дочерние элементы, оставляем их на стартовой позиции */
+  width: 100%;
+  padding-top: 20px;
+}
+
+/* Заголовок дневника */
+.emotion-mood-diary h2 {
+  text-align: center; /* Центрируем только текст заголовка */
+  font-size: 1.8rem;
+  color: #3a3a3a;
+  margin-bottom: 15px;
+  width: 100%; /* Убедитесь, что заголовок занимает всю ширину */
+}
+
+/* Другие элементы остаются с 100% шириной */
+.entry-inputs {
+  width: 100%;
+}
+
+.emotion-diary-textarea {
+  width: 100%;
+}
+
+.mood-slider-container {
+  width: 100%;
+}
+
+.date-input {
+  width: 100%;
+}

@@ -1,26 +1,48 @@
 // src/components/Header/Header.js
-import React from "react";
-import { useNavigate } from 'react-router-dom'; // Импортируем useNavigate для роутинга
+import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import "./Header.css";
 import logoImage from "../../assets/images/header/logo.svg";
 
 const Header = () => {
-  const navigate = useNavigate(); // Используем хук для навигации
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("access_token");
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   const goToRegister = () => {
-    navigate('/register'); // Перенаправляем на страницу регистрации
+    navigate('/register');
   };
 
   const goToLogin = () => {
-    navigate('/login'); // Перенаправляем на страницу логина
+    navigate('/login');
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("access_token");
+    setIsLoggedIn(false);
+  };
+
+  const generateAvatar = (name) => {
+    const initials = name.split(" ").map(word => word[0].toUpperCase()).join("");
+    return <div className="avatar">{initials}</div>;
+  };
+
+  const goToHome = () => {
+    navigate("/");
   };
 
   return (
     <header className="header">
-      <div className="header__logo">
+      <button className="header__logo-button" onClick={goToHome}>
         <img src={logoImage} alt="TalkSfera Logo" className="header__logo-image" />
         <h1 className="header__logo-text">TalkSfera</h1>
-      </div>
+      </button>
 
       <nav className="header__navigation">
         <ul className="navigation__list">
@@ -28,7 +50,7 @@ const Header = () => {
             <a href="#about" className="navigation__link">About us</a>
           </li>
           <li className="navigation__item">
-            <a href="#therapists" className="navigation__link">Therapist's</a>
+            <a href="#therapists" className="navigation__link">Therapist’s</a>
           </li>
           <li className="navigation__item">
             <a href="#courses" className="navigation__link">Courses</a>
@@ -46,14 +68,17 @@ const Header = () => {
       </nav>
 
       <div className="header__actions">
-        <select className="actions__language-select">
-          <option>ENG</option>
-          <option>RUS</option>
-        </select>
-
-        <button className="actions__login-button" onClick={goToLogin}>Log in</button> {/* Обработчик кнопки */}
-        <button className="actions__cta-button" onClick={goToRegister}>Get started - it's free</button>
-
+        {isLoggedIn ? (
+          <>
+            {generateAvatar("John Doe")}
+            <button onClick={handleLogout} className="actions__login-button">Log out</button>
+          </>
+        ) : (
+          <>
+            <button className="actions__login-button" onClick={goToLogin}>Log in</button>
+            <button className="actions__cta-button" onClick={goToRegister}>Get started - it's free</button>
+          </>
+        )}
       </div>
     </header>
   );
