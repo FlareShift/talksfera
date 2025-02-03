@@ -1,0 +1,142 @@
+/* Заголовок */
+.goals-tracker h2 {
+  text-align: Center;
+  font-size: 1.8rem;
+  color: #3a3a3a;
+  margin-bottom: 15px;
+}
+
+/* Поле ввода */
+.input-field {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #d1d1d1;
+  background-color: #f9f9f9;
+  resize: none;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  margin-bottom: 15px; /* Умеренный отступ снизу */
+}
+
+.input-field:focus {
+  border-color: #6a8e7f;
+  box-shadow: 0 0 8px rgba(106, 142, 127, 0.3);
+}
+
+/* Кнопки */
+.button-group {
+  display: flex;
+  gap: 10px; /* Умеренный `gap` между кнопками */
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.add-goal-btn,
+.history-btn {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  font-weight: 600; /* Сделал текст жирным */
+}
+
+/* Кнопка "Добавить цель" */
+.add-goal-btn {
+  background-color: #6a8e7f;
+  color: white;
+}
+
+.add-goal-btn:hover {
+  background-color: #577469;
+}
+
+/* Кнопка "История целей" */
+.history-btn {
+  background-color: #ff6f61;
+  color: white;
+}
+
+.history-btn:hover {
+  background-color: #e55a4e;
+}
+
+/* Список подцелей */
+.subgoals-list ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 15px;
+}
+
+.subgoals-list li {
+  font-size: 1rem;
+  color: #4a4a4a;
+  margin-bottom: 10px; /* Умеренное расстояние между подцелями */
+}
+
+/* Стили подцелей */
+.subgoal-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subgoal-item:hover {
+  background-color: #f6f6f6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.subgoal-item.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #6a8e7f;
+}
+
+.subgoal-input-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 1px; /* Уменьшили отступ сверху, чтобы поднять кнопку */
+  align-items: center; /* Выравниваем по центру */
+}
+
+
+.add-subgoal-btn {
+  padding: 8px 10px; /* Увеличены отступы для повышения высоты */
+  font-size: 1rem; /* Увеличен размер шрифта */
+  background-color: #6a8e7f;
+  color: white;
+  border: none;
+  border-radius: 6px; /* Оставляем округлые углы */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: -15px; /* Немного поднимем кнопку */
+}
+
+.add-subgoal-btn:hover {
+  background-color: #577469;
+}
+

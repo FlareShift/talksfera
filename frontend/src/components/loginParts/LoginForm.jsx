@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "./LoginForm.css";
 import axios from "axios";
-import { Link } from 'react-router-dom';  // Import Link from react-router-dom
+import { Link, useNavigate } from "react-router-dom"; // Импортируем useNavigate
 
 const Login = () => {
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-  const [loading, setLoading] = useState(false); // For tracking loading state
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate(); // Инициализируем navigate
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -15,38 +16,59 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Start loading
-    setErrorMessage(""); // Reset error message
-    setSuccessMessage(""); // Reset success message
+    setLoading(true);
+    setErrorMessage("");
+    setSuccessMessage("");
 
     try {
-      // Sending data to the server for login
-      const response = await axios.post("http://127.0.0.1:8000/login/token/", formData, {
-        headers: {
-          "Content-Type": "application/json",
-        },
+      // Отправка запроса на сервер
+      const response = await axios.post("http://localhost:8000/api/token/", formData, {
+        headers: { "Content-Type": "application/json" },
       });
 
-      // Save tokens in localStorage
-      localStorage.setItem("access_token", response.data.access);
-      localStorage.setItem("refresh_token", response.data.refresh);
+      console.log("Login response:", response.data); // Логируем ответ сервера
 
-      setSuccessMessage("Login successful!");
-      setErrorMessage(""); // Clear error
+      const { access, refresh } = response.data;
+
+      if (access && refresh) {
+        // Сохраняем токены в localStorage
+        localStorage.setItem("access_token", access);
+        localStorage.setItem("refresh_token", refresh);
+
+        // Добавляем access-токен в заголовки всех запросов
+        axios.defaults.headers.common["Authorization"] = `Bearer ${access}`;
+
+        setSuccessMessage("Login successful!");
+        setErrorMessage("");
+
+        // Переходим на главную страницу
+        navigate("/"); // Перенаправление на главную страницу
+
+        // Проверяем, сохранились ли токены
+        console.log("Stored access token:", localStorage.getItem("access_token"));
+        console.log("Stored refresh token:", localStorage.getItem("refresh_token"));
+      } else {
+        setErrorMessage("Unexpected server response. Please try again.");
+      }
     } catch (error) {
-      // Handling errors
+      // Логируем ошибку в консоль
+      console.error("Login error:", error);
+
+      // Обработка ошибок сервера
       if (error.response) {
         if (error.response.status === 401) {
           setErrorMessage("Invalid email or password. Please try again.");
+        } else if (error.response.status === 400) {
+          setErrorMessage("Invalid request. Please check your credentials.");
         } else {
           setErrorMessage("An error occurred. Please try again later.");
         }
       } else {
         setErrorMessage("Network error. Please check your internet connection.");
       }
-      setSuccessMessage(""); // Clear success
+      setSuccessMessage("");
     } finally {
-      setLoading(false); // End loading
+      setLoading(false);
     }
   };
 
@@ -57,7 +79,7 @@ const Login = () => {
           <h2>Log In</h2>
           <div className="signup-link">
             <span>I don’t have an account </span>
-            <Link to="/register">Sign Up</Link>  {/* Use Link component */}
+            <Link to="/register">Sign Up</Link>
           </div>
           <form onSubmit={handleSubmit}>
             <div className="input-group">

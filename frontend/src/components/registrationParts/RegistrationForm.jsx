@@ -7,16 +7,16 @@ const Registration = () => {
   const [progress, setProgress] = useState(0);
 
   const handleNext = () => {
-    if (step < 4) {
+    if (step < 5) {
       setStep(step + 1);
-      setProgress(progress + 33);
+      setProgress(progress + 25);  // Обновляем прогресс на 25% для 5 шагов
     }
   };
 
   const handleBack = () => {
     if (step > 1) {
       setStep(step - 1);
-      setProgress(progress - 33);
+      setProgress(progress - 25);  // Обновляем прогресс на 25% для 5 шагов
     }
   };
 
@@ -46,18 +46,16 @@ const Registration = () => {
   };
 
   return (
-
     <div className={`${styles.registrationWrapper} ${styles.registrationPage}`}>
-
-
       <div className={styles.registrationContainer}>
         <aside className={styles.registrationSidebar}>
           <h2>Create account</h2>
           <ul>
             <li className={step === 1 ? styles.active : ''}>User Profile</li>
-            <li className={step === 2 ? styles.active : ''}>Residential Address</li>
-            <li className={step === 3 ? styles.active : ''}>Services</li>
-            <li className={step === 4 ? styles.active : ''}>Finish</li>
+            <li className={step === 2 ? styles.active : ''}>Contact Information</li>
+            <li className={step === 3 ? styles.active : ''}>Location</li>
+            <li className={step === 4 ? styles.active : ''}>Security</li>
+            <li className={step === 5 ? styles.active : ''}>Finish</li>
           </ul>
         </aside>
         <main className={styles.registrationFormSection}>
@@ -68,12 +66,21 @@ const Registration = () => {
             <div className={styles.registrationFormStep}>
               <h3>User Profile</h3>
               <form>
-                <label>Name</label>
-                <input type="text" placeholder="Enter your name" />
+                <label>First Name</label>
+                <input type="text" placeholder="Enter your first name" />
+
+                <label>Last Name</label>
+                <input type="text" placeholder="Enter your last name" />
 
                 <label>Email</label>
                 <input type="email" placeholder="Enter your email" />
-
+              </form>
+            </div>
+          )}
+          {step === 2 && (
+            <div className={styles.registrationFormStep}>
+              <h3>Contact Information</h3>
+              <form>
                 <label>Phone Number</label>
                 <input type="text" placeholder="Enter your phone number" />
 
@@ -98,44 +105,53 @@ const Registration = () => {
                     ))}
                   </select>
                 </div>
-              </form>
-            </div>
-          )}
-          {step === 2 && (
-            <div className={styles.registrationFormStep}>
-              <h3>Residential Address</h3>
-              <form>
-                <label>Country</label>
-                <input type="text" placeholder="Enter your country" />
 
-                <label>Region</label>
-                <input type="text" placeholder="Enter your region" />
+                <label>Gender</label>
+                <select>
+                  <option value="">Select Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
 
-                <label>Settlement</label>
-                <input type="text" placeholder="Enter your settlement" />
+                <label>Language</label>
+                <select>
+                  <option value="">Select Language</option>
+                  <option value="english">English</option>
+                  <option value="spanish">Spanish</option>
+                  <option value="french">French</option>
+                  <option value="german">German</option>
+                </select>
               </form>
-              <button className={styles.skipButton}>Skip this part</button>
             </div>
           )}
           {step === 3 && (
             <div className={styles.registrationFormStep}>
-              <h3>Services</h3>
+              <h3>Location</h3>
               <form>
-                <label>Therapy Type</label>
-                <input type="text" placeholder="Enter therapy type" />
+                <label>Country</label>
+                <input type="text" placeholder="Enter your country" />
 
-                <label>Insurance</label>
-                <input type="text" placeholder="Enter insurance" />
-
-                <label>Gender</label>
-                <input type="text" placeholder="Enter gender" />
-
-                <label>Relationship Status</label>
-                <input type="text" placeholder="Enter relationship status" />
+                <label>City</label>
+                <input type="text" placeholder="Enter your city" />
               </form>
             </div>
           )}
           {step === 4 && (
+            <div className={styles.registrationFormStep}>
+              <h3>Security</h3>
+              <form>
+                <label>Password</label>
+                <input type="password" placeholder="Enter your password" />
+
+                <label>Confirm Password</label>
+                <input type="password" placeholder="Confirm your password" />
+
+                <label>Agree to Terms and Conditions</label>
+                <input type="checkbox" />
+              </form>
+            </div>
+          )}
+          {step === 5 && (
             <div className={styles.registrationFormStep}>
               <h3>Finish</h3>
               <p>Thank you for completing the registration!</p>
@@ -143,7 +159,7 @@ const Registration = () => {
           )}
           <div className={styles.registrationFormNavigation}>
             {step > 1 && <button onClick={handleBack}>Back</button>}
-            {step < 4 && <button onClick={handleNext}>Next</button>}
+            {step < 5 && <button onClick={handleNext}>Next</button>}
           </div>
         </main>
         <div className={styles.registrationImageSection} style={{ backgroundImage: `url(${ImageSrc})` }}></div>

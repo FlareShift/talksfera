@@ -1,0 +1,91 @@
+/* Заголовок для раздела "Ресурсы" */
+.resources-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #3a3a3a;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center; /* Центрирование заголовка */
+  width: 100%;
+}
+
+/* Контейнер для добавления ресурса */
+.add-resource {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Увеличенный отступ между элементами */
+  width: 60%; /* Уменьшаем ширину для лучшего отображения */
+  margin-bottom: 30px;
+  margin: 0 auto; /* Центрируем контейнер */
+}
+
+/* Поля ввода для нового ресурса */
+.resource-input {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #d1d1d1;
+  background-color: #f4f7f6;
+  box-sizing: border-box;
+  resize: none;
+}
+
+/* Кнопка добавления в избранное */
+.add-button {
+  padding: 12px;
+  background-color: #6a8e7f;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 10px; /* Отступ сверху для кнопки */
+}
+
+.add-button:hover {
+  background-color: #577469;
+}
+
+/* Список ресурсов */
+.resource-list {
+  list-style-type: none;
+  padding: 0;
+  width: 60%; /* Ширина списка ресурсов для выравнивания */
+  margin: 0 auto; /* Центрирование списка */
+  margin-top: 20px; /* Отступ сверху для списка */
+}
+
+/* Элемент ресурса */
+.resource-item {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+/* Ссылка на ресурс */
+.resource-link {
+  color: #3a3a3a;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.resource-link:hover {
+  color: #6a8e7f;
+}
+
+/* Контейнер для всей секции "Ресурсы" */
+.resources-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрирование всех элементов */
+  justify-content: center; /* Вертикальное выравнивание */
+  width: 100%;
+  padding: 20px;
+  background-color: #f4f7f6;
+  box-sizing: border-box;
+}

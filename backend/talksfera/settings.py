@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     'registration.apps.RegistrationConfig',
     'login.apps.LoginConfig',
     'rest_framework_simplejwt',
-    'registration',
+    'note',
 ]
 
 
