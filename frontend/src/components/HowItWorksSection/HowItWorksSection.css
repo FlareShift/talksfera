@@ -1,0 +1,123 @@
+.how-it-works {
+  position: relative;
+  padding: 5rem 2rem;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.how-it-works__decorative-line {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.5;
+
+  mix-blend-mode: difference;
+}
+
+.how-it-works__text,
+.how-it-works__image img {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}
+
+.how-it-works__title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.how-it-works__title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 2px;
+  background-color: #5bb97a;
+  margin: 0.5rem auto 0;
+}
+
+.how-it-works__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.how-it-works__step {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.how-it-works__step.left .how-it-works__content {
+  flex-direction: row;
+}
+
+.how-it-works__step.right .how-it-works__content {
+  flex-direction: row-reverse;
+}
+
+.how-it-works__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.how-it-works__text {
+  flex: 1;
+  max-width: 500px;
+  padding: 1rem;
+  background: transparent;
+}
+
+.how-it-works__step-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.how-it-works__step-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.how-it-works__image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+}
+
+.how-it-works__image img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .how-it-works__step.left .how-it-works__content,
+  .how-it-works__step.right .how-it-works__content {
+    flex-direction: column;
+  }
+
+  .how-it-works__image {
+    max-width: 100%;
+  }
+}

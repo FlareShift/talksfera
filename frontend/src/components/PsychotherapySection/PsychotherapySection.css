@@ -1,0 +1,112 @@
+.psychotherapy {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #f5f7f4;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.psychotherapy__content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.psychotherapy__title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #325243;
+  margin-bottom: 2.5rem;
+}
+
+.psychotherapy__cards {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.psychotherapy__cards::-webkit-scrollbar {
+  height: 8px;
+}
+
+.psychotherapy__cards::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.psychotherapy__cards::-webkit-scrollbar-track {
+  background: #f5f7f4;
+}
+
+.psychotherapy__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 260px;
+  padding: 1rem;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.psychotherapy__image-container {
+  position: relative;
+  width: 260px;
+  height: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.psychotherapy__image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.psychotherapy__image--default {
+  opacity: 1;
+}
+
+.psychotherapy__image--hover {
+  opacity: 0;
+}
+
+.psychotherapy__card:hover .psychotherapy__image--default {
+  opacity: 0;
+}
+
+.psychotherapy__card:hover .psychotherapy__image--hover {
+  opacity: 1;
+}
+
+.psychotherapy__card-title {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: #325243;
+  line-height: 1.4;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .psychotherapy__card {
+    width: 220px;
+    padding: 0.8rem;
+  }
+
+  .psychotherapy__image-container {
+    width: 220px;
+    height: 150px;
+  }
+
+  .psychotherapy__title {
+    font-size: 1.6rem;
+  }
+}

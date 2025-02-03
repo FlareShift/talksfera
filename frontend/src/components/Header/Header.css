@@ -1,0 +1,215 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  font-family: 'SF UI Text', sans-serif;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header__logo-image {
+  height: 40px;
+}
+
+.header__logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  color: #325243;
+}
+
+.header__navigation .navigation__list {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation__item .navigation__link {
+  text-decoration: none;
+  color: #1e1e1e;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navigation__link:hover {
+  color: #ff6b35;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.actions__language-select {
+  background: none;
+  border: 1px solid #1e1e1e;
+  padding: 0.4rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.actions__login-button {
+  background: none;
+  border: 1px solid #1e1e1e;
+  padding: 0.5rem 1rem;
+  color: #1e1e1e;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.actions__login-button:hover {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.actions__cta-button {
+  background-color: #e65c27;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.actions__cta-button:hover {
+  background-color: #cc4f22;
+}
+
+/* src/components/Header/Header.css */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ff6b35;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Пример стиля для кнопки */
+.header__logo-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.header__logo-button:focus {
+  outline: none; /* Убираем обводку при фокусе */
+}
+
+/* src/components/Header/Header.css */
+
+/* Анимация прыжка кнопки с затемнением */
+@keyframes jumpAndFade {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px); /* Прыжок вверх */
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.jump-animation {
+  animation: jumpAndFade 0.5s ease-out;
+}
+
+/* Основной стиль для кнопок */
+.actions__login-button, .actions__cta-button, .header__logo-button, .actions__logout-button {
+  padding: 10px 20px;  /* Уменьшен отступ */
+  font-size: 0.875rem;  /* Уменьшен размер шрифта */
+  cursor: pointer;
+  border-radius: 50px;  /* Скруглённые углы для всех кнопок */
+  transition: all 0.3s ease-in-out;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Для кнопки Log in */
+.actions__login-button {
+  background-color: white;
+  color: #0078D4;
+  border: 1px solid #0078D4;  /* Синий контур */
+}
+
+/* Эффект при наведении на кнопки */
+.actions__login-button:hover, .actions__cta-button:hover, .actions__logout-button:hover {
+  background-color: #0078D4;  /* Синий фон */
+  color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Для кнопки Get started - it's free */
+.actions__cta-button {
+  background-color: #e65c27; /* Оранжевый фон */
+  color: white;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.actions__cta-button:hover {
+  background-color: #cc4f22; /* Темно-оранжевый при наведении */
+}
+
+/* Стиль для кнопки Log out */
+.actions__logout-button {
+  background-color: white;
+  color: #0078D4;
+  border: 1px solid #0078D4;
+}
+
+/* Для логотипа */
+.header__logo-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;  /* Уменьшено до аналогичного размера */
+  font-size: 0.875rem;
+  border-radius: 50px;
+}
+
+/* Стиль для аватарки */
+.avatar {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: #0078D4;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+

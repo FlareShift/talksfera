@@ -1,0 +1,130 @@
+.footer {
+  background-color: #1e1e1e;
+  color: #f3f6fb;
+  font-family: Arial, sans-serif;
+  padding: 40px 20px;
+}
+
+.footer__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 20px;
+}
+
+.footer__section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer__logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer__logo {
+  width: 40px;
+  height: auto;
+}
+
+.footer__logo-text {
+  font-size: 1.5rem;
+  color: #92e3a9;
+  font-weight: bold;
+}
+
+.footer__tagline {
+  font-style: italic;
+  margin-bottom: 15px;
+  color: #f3f6fb;
+}
+
+.footer__title {
+  color: #f3f6fb;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__item {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.footer__link {
+  color: #f3f6fb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+  color: #92e3a9;
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 20px;
+}
+
+.footer__payments,
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Цвет нижних иконок */
+.footer__payments .footer__icon:nth-child(1),
+.footer__payments .footer__icon:nth-child(4) {
+  color: #ffa500; /* Оранжевый цвет для 1-й и 4-й иконок */
+}
+
+/* Общий стиль для всех иконок */
+.footer__icon {
+  color: #f3f6fb; /* Общий цвет для всех иконок */
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+/* Изменение цвета при наведении */
+.footer__icon:hover {
+  color: #92e3a9; /* Светло-зелёный цвет при наведении */
+}
+
+/* Иконки 1-я и 4-я сохраняют стиль при наведении */
+.footer__payments .footer__icon:nth-child(1):hover,
+.footer__payments .footer__icon:nth-child(4):hover {
+  color: #92e3a9; /* Меняются на светло-зелёный при наведении */
+}
+
+/* Убираем изменение цвета для иконок контактной информации */
+.footer__info .footer__icon:hover {
+  color: #f3f6fb; /* Остается исходный цвет */
+}
+
+.footer__copyright {
+  font-size: 0.9rem;
+}
+
+/* Секция контактной информации */
+.footer__info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 10px;
+}
+
+.footer__address {
+  margin-top: 10px;
+}

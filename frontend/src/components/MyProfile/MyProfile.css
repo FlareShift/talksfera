@@ -1,0 +1,245 @@
+/* Стили для профиля */
+.profile-page {
+  font-family: Arial, sans-serif;
+  background-color: #325243;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-container {
+  display: flex;
+  background-color: transparent;
+  width: 90%;
+  max-width: 1200px;
+  gap: 20px;
+  border-radius: 10px;
+}
+
+.profile-page .side-menu {
+  width: 250px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.profile-page .side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.profile-page .side-menu li {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.profile-page .side-menu .active {
+  color: orange;
+  font-weight: bold;
+}
+
+.profile-page .profile-form {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-page .header-with-progress {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.profile-page .profile-form h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.profile-page .progress-bar {
+  flex: 1;
+  height: 3px;
+  background-color: #ddd;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.profile-page .progress-bar .progress {
+  height: 100%;
+  background-color: orange;
+  width: 50%;
+}
+
+.profile-page .progress-bar .percentage {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  font-size: 12px;
+  color: #333;
+  font-weight: bold;
+}
+
+.profile-page .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.profile-page .left-section, .profile-page .right-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-page .form-row {
+  margin-bottom: 8px;
+}
+
+.profile-page .form-row label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.profile-page .form-row input,
+.profile-page .form-row select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.profile-page .form-row.inline {
+  display: flex;
+  gap: 20px;
+}
+
+.profile-page .dob input,
+.profile-page .dob select {
+  width: auto;
+}
+
+.profile-page .profile-picture {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.profile-page .edit-avatar {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.profile-page .form-row.bonuses {
+  margin-bottom: 20px;
+}
+
+.profile-page .bonuses-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.profile-page button {
+  padding: 10px 20px;
+  background-color: #D6542A;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: auto;
+  margin-top: 10px; /* Уменьшен верхний отступ */
+  align-self: flex-start;
+}
+
+.profile-page .dob {
+  display: flex;
+  gap: 10px;
+}
+
+.profile-page .dob select {
+  width: 100px;
+}
+
+.profile-page .profile-form .right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.profile-page .form-row.country-and-balance {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.profile-page .form-row.country-and-balance .form-row {
+  margin-bottom: 0;
+}
+
+.profile-page .form-row.save-button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  grid-column: span 2;
+  margin-top: 5px; /* Уменьшен верхний отступ */
+}
+
+.profile-page .form-row.business {
+  margin-bottom: 2px; /* Еще меньше отступ */
+}
+
+.profile-page .form-row.save-button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  grid-column: span 2;
+  margin-top: 0; /* Убираем отступ сверху */
+}
+
+/* Уменьшение размера для полей Gender и Language */
+.profile-page .form-row.gender,
+.profile-page .form-row.language {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.profile-page .form-row.gender select,
+.profile-page .form-row.language select {
+  width: 200px;
+  padding: 8px;
+}
+
+.profile-page .profile-form .right-section {
+  margin-top: -20px; /* Немного поднимем правую колонку */
+}
+
+.profile-page .gender-select,
+.profile-page .language-select {
+  width: 250px;  /* Збільшуємо ширину полей */
+  max-width: 100%;  /* Максимальная ширина, чтобы они не выходили за пределы контейнера */
+}

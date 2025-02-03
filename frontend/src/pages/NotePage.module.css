@@ -1,0 +1,131 @@
+/* NotePage.module.css */
+
+.notePage {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: #325243; /* Темно-зеленый фон */
+}
+
+.tablet {
+  display: flex;
+  width: 1200px;
+  height: 600px;
+  background-color: #ffffff; /* Белый фон для карточки */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Более выраженная тень для глубины */
+  border-radius: 20px; /* Более округленные углы */
+  overflow: hidden;
+  border: 1px solid #a1c0a1; /* Легкая граница для карточки */
+}
+
+/* Сайдбар */
+.sidebar {
+  width: 250px;
+  background-color: #ff6f61; /* Красный/коралловый фон */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-right: 3px solid #e14d44; /* Темный оттенок для границы */
+  box-shadow: 3px 0px 8px rgba(0, 0, 0, 0.2); /* Легкая тень */
+  border-radius: 15px 0 0 15px; /* Закругления только с левой стороны */
+}
+
+
+/* Кнопки */
+.sidebar button {
+  background-color: #f3f4f6; /* Светло-серый фон для кнопок */
+  color: #333; /* Темный текст для контраста */
+  border: none;
+  padding: 14px 24px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Анимация для изменения фона */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Активная кнопка */
+.sidebar button.active {
+  background-color: #F8E06E; /* Новый желтый цвет для активной кнопки */
+  font-weight: bold;
+  color: white; /* Белый текст для лучшего контраста */
+}
+
+/* При наведении на кнопки */
+.sidebar button:hover {
+  background-color: #e1c95e; /* Темный желтый для hover */
+  color: white;
+  transform: translateY(-3px); /* Легкое поднятие кнопки */
+}
+
+/* Для нажатия на кнопки */
+.sidebar button:active {
+  background-color: #d0b157; /* Еще более темный желтый для нажатия */
+  transform: translateY(2px); /* Легкое движение при нажатии */
+}
+
+/* Контент */
+.content {
+  flex-grow: 1;
+  padding: 35px;
+  background-color: #f1f8f3; /* Молочный с зелёным подтоном */
+  border-radius: 15px;
+  overflow-y: auto;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05); /* Легкая внутренняя тень */
+}
+
+/* Заголовки в контенте */
+.content h2 {
+  font-size: 1.6rem;
+  color: #3b6b56; /* Более насыщенный зеленый для заголовков */
+  border-bottom: 3px solid #3b6b56; /* Цвет нижней линии */
+  padding-bottom: 12px;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+/* Карточка с информацией (например, данные пациента) */
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-left: 6px solid #65a77d; /* Левый акцент на карточке */
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  color: #3b6b56;
+}
+
+.card p {
+  font-size: 1.1rem;
+  color: #444; /* Темный цвет для текста */
+  line-height: 1.6;
+}
+
+/* Таблицы для данных */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 12px;
+  border-bottom: 2px solid #3b6b56; /* Темно-зеленая линия для таблицы */
+  text-align: left;
+}
+
+.table th {
+  background-color: #65a77d; /* Заголовки таблиц в оливковом зеленом */
+  color: white;
+}
+
+.table tr:hover {
+  background-color: #eaf4e2; /* Легкий зелёный оттенок при наведении */
+}
+

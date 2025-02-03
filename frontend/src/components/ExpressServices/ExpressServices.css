@@ -1,0 +1,53 @@
+.express-services {
+  background-color: #325243;
+  padding: 40px 20px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.express-services__title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #e5e5e5;
+}
+
+.express-services__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 40px;
+}
+
+.express-services__item {
+  max-width: 200px;
+  text-align: center;
+}
+
+.express-services__phones {
+  margin-bottom: 10px;
+}
+
+.express-services__phone {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #f5f5f5;
+}
+
+.express-services__description {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #c9c9c9;
+}
+
+@media (max-width: 768px) {
+  .express-services__item {
+    max-width: 100%;
+  }
+}
+
+#service-4 .express-services__description {
+  margin-top: 28.5px;
+}
