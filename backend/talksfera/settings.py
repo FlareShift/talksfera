@@ -41,6 +41,7 @@ AUTHENTICATION_BACKENDS = [
 # Application definition
 
 INSTALLED_APPS = [
+    "daphne",  # Добавляем для WebSocket
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +55,17 @@ INSTALLED_APPS = [
     'login.apps.LoginConfig',
     'rest_framework_simplejwt',
     'note',
+    "channels",
+    "chat",
 ]
+
+ASGI_APPLICATION = 'talksfera.asgi.application'
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer",
+    },
+}
 
 
 REST_FRAMEWORK = {
@@ -166,3 +177,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ORIGIN_WHITELIST = [
      'http://localhost:3000'
 ]
+

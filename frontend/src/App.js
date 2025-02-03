@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MainPage from './pages/MainPage';
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
-import NotePage from './pages/NotePage'; // Страница с вкладками
-import MyProfile from './pages/MyProfile'; // Страница профиля
+import NotePage from './pages/NotePage';
+import MyProfile from './pages/MyProfile';
+import ChatPage from './pages/ChatPage';  // Импортируем страницу чата
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -22,15 +23,18 @@ function App() {
   }, []);
 
   return (
-    <Router> {/* Оборачиваем все в Router для маршрутизации */}
+    <Router>
       <Routes>
         <Route path="/" element={<MainPage />} /> {/* Главная страница */}
         <Route path="/register" element={<RegisterPage />} /> {/* Страница регистрации */}
         <Route path="/login" element={<LoginPage />} /> {/* Страница логина */}
         <Route path="/note" element={<NotePage />} /> {/* Страница блокнота */}
-        <Route path="/emotion-history" element={<NotePage />} /> {/* Страница истории записей, NotePage */}
-        <Route path="/goals-history" element={<NotePage />} /> {/* Новый маршрут для истории целей */}
+        <Route path="/emotion-history" element={<NotePage />} /> {/* Страница истории записей */}
+        <Route path="/goals-history" element={<NotePage />} /> {/* Страница истории целей */}
         <Route path="/myprofile" element={<MyProfile />} /> {/* Страница профиля */}
+
+        {/* Обновляем маршрут для чата, добавляем параметр room */}
+        <Route path="/chat/:room" element={<ChatPage />} /> {/* Маршрут с параметром room */}
       </Routes>
     </Router>
   );

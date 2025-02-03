@@ -38,23 +38,30 @@ const Login = () => {
         // Добавляем access-токен в заголовки всех запросов
         axios.defaults.headers.common["Authorization"] = `Bearer ${access}`;
 
+        // 📌 Делаем запрос к серверу, чтобы получить имя пользователя
+        try {
+          const userResponse = await axios.get("http://localhost:8000/login/user/me/", {
+            headers: { Authorization: `Bearer ${access}` },
+          });
+
+          localStorage.setItem("username", userResponse.data.username); // Сохраняем имя пользователя
+          console.log("Stored username:", localStorage.getItem("username"));
+        } catch (userError) {
+          console.error("Error fetching user data:", userError);
+          setErrorMessage("Failed to get user info. Try again.");
+        }
+
         setSuccessMessage("Login successful!");
         setErrorMessage("");
 
         // Переходим на главную страницу
-        navigate("/"); // Перенаправление на главную страницу
-
-        // Проверяем, сохранились ли токены
-        console.log("Stored access token:", localStorage.getItem("access_token"));
-        console.log("Stored refresh token:", localStorage.getItem("refresh_token"));
+        navigate("/");
       } else {
         setErrorMessage("Unexpected server response. Please try again.");
       }
     } catch (error) {
-      // Логируем ошибку в консоль
       console.error("Login error:", error);
 
-      // Обработка ошибок сервера
       if (error.response) {
         if (error.response.status === 401) {
           setErrorMessage("Invalid email or password. Please try again.");
