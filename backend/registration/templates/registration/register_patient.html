@@ -1,33 +1,32 @@
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}  <!-- Виведе всі поля форми, включаючи паролі -->
-    <button type="submit">Зареєструватися</button>
-</form>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Зареєструватися</button>
+    </form>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function() {
-        const countryField = document.getElementById('id_country');
-        const cityField = document.getElementById('id_city');
-
-        countryField.addEventListener('change', function() {
-            const country = countryField.value; // Використовуємо назву країни, а не ID
-
-            fetch(`/get_cities_by_country/${country}/`)
-                .then(response => response.json())
-                .then(data => {
-                    cityField.innerHTML = '';
-                    cityField.appendChild(new Option("Виберіть місто", "")); // Додаємо пустий варіант
-
-                    data.cities.forEach(function(city) {
-                        const option = document.createElement('option');
-                        option.value = city;  // Використовуємо назву міста як значення
-                        option.text = city;
-                        cityField.appendChild(option);
-                    });
-                })
-                .catch(error => console.error('Помилка:', error));
+<script>
+$(document).ready(function () {
+    $("#country-select").change(function () {
+        var country = $(this).val();
+        $.ajax({
+            url: "{% url 'get_cities' %}",
+            data: {'country': country},
+            dataType: 'json',
+            success: function (data) {
+                var citySelect = $("#city-select");
+                citySelect.empty();
+                citySelect.append('<option value="">Select city</option>');
+                $.each(data, function (index, city) {
+                    citySelect.append('<option value="' + city.id + '">' + city.name + '</option>');
+                });
+            }
         });
     });
+});
 </script>
+
+
+
 
